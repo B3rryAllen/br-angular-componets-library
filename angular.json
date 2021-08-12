@@ -3,5 +3,46 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-  }
+    "br-lib-components": {
+      "projectType": "library",
+      "root": "projects/br-lib-components",
+      "sourceRoot": "projects/br-lib-components/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/br-lib-components/tsconfig.lib.json",
+            "project": "projects/br-lib-components/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/br-lib-components/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/br-lib-components/src/test.ts",
+            "tsConfig": "projects/br-lib-components/tsconfig.spec.json",
+            "karmaConfig": "projects/br-lib-components/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/br-lib-components/tsconfig.lib.json",
+              "projects/br-lib-components/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "br-lib-components"
 }
