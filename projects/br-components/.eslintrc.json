@@ -10,8 +10,8 @@
       ],
       "parserOptions": {
         "project": [
-          "projects/br-lib-components/tsconfig.lib.json",
-          "projects/br-lib-components/tsconfig.spec.json"
+          "projects/br-components/tsconfig.lib.json",
+          "projects/br-components/tsconfig.spec.json"
         ],
         "createDefaultProgram": true
       },
@@ -20,7 +20,7 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "lib",
+            "prefix": "br",
             "style": "camelCase"
           }
         ],
@@ -28,7 +28,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "lib",
+            "prefix": "br",
             "style": "kebab-case"
           }
         ]

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BrLibComponentsComponent } from './br-lib-components.component';
+import { BrComponentsComponent } from './br-components.component';
 
 describe('BrLibComponentsComponent', () => {
-  let component: BrLibComponentsComponent;
-  let fixture: ComponentFixture<BrLibComponentsComponent>;
+  let component: BrComponentsComponent;
+  let fixture: ComponentFixture<BrComponentsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BrLibComponentsComponent ]
+      declarations: [ BrComponentsComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BrLibComponentsComponent);
+    fixture = TestBed.createComponent(BrComponentsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
