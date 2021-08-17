@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
-    "lint": "ng lint"
+    "lint": "ng lint --fix",
+    "format": "prettier --write",
+    "prepare": "husky install"
   },
   "private": true,
   "dependencies": {
@@ -36,6 +38,8 @@
     "@typescript-eslint/eslint-plugin": "4.28.2",
     "@typescript-eslint/parser": "4.28.2",
     "eslint": "^7.26.0",
+    "eslint-config-prettier": "^8.3.0",
+    "husky": "^7.0.0",
     "jasmine-core": "~3.6.0",
     "jasmine-spec-reporter": "~5.0.0",
     "karma": "~6.3.4",
@@ -43,9 +47,22 @@
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.5.0",
+    "lint-staged": "^11.1.2",
     "ng-packagr": "^12.2.0",
+    "prettier": "2.3.2",
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
     "typescript": "~4.3.5"
+  },
+  "lint-staged": {
+    "{projects/**/src,src}/**/*.{ts,tsx,json}": [
+      "prettier --write",
+      "lint --fix"
+    ],
+    "{projects/**/src,src}/**/*.{css,scss,sass,less}": [
+      "prettier --write"
+    ],
+    "!({projects/**/src/**/*,src/**/*}).{css,scss,sass,less,ts,tsx,json}": "prettier --write",
+    "*.{html,md,yaml,js}": "prettier --write"
   }
 }
