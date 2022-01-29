@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+    <defs>
+        <path id="chevron-down" d="M8.295 16.885L12.875 12.295 8.295 7.705 9.705 6.295 15.705 12.295 9.705 18.295z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <path d="M0 0L24 0 24 24 0 24z"/>
+        <mask id="chevron-down-mask" fill="#fff">
+            <use xlink:href="#chevron-down"/>
+        </mask>
+        <use fill="currentColor" fill-rule="nonzero" transform="matrix(0 1 1 0 -.295 .295)" xlink:href="#chevron-down"/>
+    </g>
+</svg>

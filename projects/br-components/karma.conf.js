@@ -4,11 +4,15 @@
 module.exports = function (config) {
   config.set({
     basePath: '',
+
+
+
     frameworks: ['jasmine', '@angular-devkit/build-angular'],
     plugins: [
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
       require('karma-jasmine-html-reporter'),
+      require('karma-mocha-reporter'),
       require('karma-coverage'),
       require('@angular-devkit/build-angular/plugins/karma')
     ],
@@ -32,12 +36,30 @@ module.exports = function (config) {
         { type: 'text-summary' }
       ]
     },
-    reporters: ['progress', 'kjhtml'],
+    reporters: ['mocha'],
+
+    // reporter options
+    mochaReporter: {
+      symbols: {
+        success: '+',
+        info: '#',
+        warning: '!',
+        error: 'x'
+      }
+    },
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
+
+    browsers: ["ChromeHeadlessNoSandbox"],
+    customLaunchers: {
+      ChromeHeadlessNoSandbox: {
+        base: "ChromeHeadless",
+        flags: ["--no-sandbox"],
+      },
+    },
+
     singleRun: false,
     restartOnFileChange: true
   });

@@ -7,8 +7,11 @@
 # Only exists if Bazel was run
 /bazel-out
 
+/projects/br-components/src/generated
+
 # dependencies
-/node_modules
+**/node_modules
+.scannerwork
 
 # profiling files
 chrome-profiler-events*.json
@@ -40,6 +43,7 @@ npm-debug.log
 yarn-error.log
 testem.log
 /typings
+documentation.json
 
 # System Files
 .DS_Store

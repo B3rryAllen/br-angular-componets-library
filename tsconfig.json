@@ -1,7 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": ".",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
@@ -15,20 +15,22 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "es2020",
+    "types": ["node"],
     "lib": [
       "es2018",
       "dom"
     ],
     "paths": {
-      "br-lib-components": [
-        "dist/br-lib-components/br-lib-components",
-        "dist/br-lib-components"
+      "br-components": [
+        "dist/br-components/br-components",
+        "dist/br-components"
       ]
-    }
+    },
   },
+  "include": ["./projects/**/*"],
   "angularCompilerOptions": {
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true
-  }
+  },
 }
