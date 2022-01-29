@@ -1,10 +1,6 @@
-import {moduleMetadata, Story} from '@storybook/angular';
-
+import { moduleMetadata } from '@storybook/angular'
+import { iconNames } from '../br-icon-provider'
 import { BrIconsModule } from '../br-icons.module'
-import { IconNames, iconNames } from '../br-icon-provider'
-import Page from '../../../../../../../../stories/page.component';
-import {BrIconComponent} from './br-icon.component';
-import * as HeaderStories from '../../../../../../../../stories/Header.stories';
 
 export default {
     argTypes: {
