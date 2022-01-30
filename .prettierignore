@@ -4,3 +4,4 @@ coverage
 package.json
 package-lock.json
 dist
+projects/**/*/test.ts
