@@ -1,0 +1,118 @@
+@import '../../../../../styles/br-color.less';
+@import '../../../../../styles/br-padding.less';
+@import '../../../../../styles/br-fonts.less';
+@import '../../../../../styles/br-radius.less';
+
+.br-badge {
+    font-family: @fdr-font-family_default;
+
+    opacity: @fd-font-opacity_no;
+    background-clip: padding-box;
+    z-index: 3;
+    display: inline-block;
+    top: 2px;
+    right: -2px;
+    padding: 0;
+    height: 19px;
+    border-radius: @fde-radius-large;
+    border: 0;
+    text-align: center;
+
+    &_info {
+        border-radius: @fde-radius-xlarge;
+
+        .br-badge__content {
+            font-weight: 600;
+            letter-spacing: 0.1px;
+        }
+    }
+
+    &_default {
+        background-color: @fdr-color_primary-500;
+
+        .br-badge__content {
+            color: @fd-color_white;
+        }
+    }
+
+    &_primary {
+        background-color: @fdr-color_primary-700;
+
+        .br-badge__content {
+            color: @fd-color_white;
+        }
+    }
+
+    &_secondary {
+        background-color: @fdr-color_primary-100;
+
+        .br-badge__content {
+            color: @fdr-color_primary-900;
+        }
+    }
+
+    &_error {
+        background-color: @fd-color_badge;
+
+        .br-badge__content {
+            color: @fd-color_white;
+        }
+    }
+
+    &_with-border {
+        border: solid 2px @fd-color_white;
+
+        &.br-badge_size {
+            &_medium {
+                .br-badge__content {
+                    line-height: 23px;
+                }
+            }
+
+            &_small {
+                min-width: 8px;
+                height: 12px;
+
+                .br-badge__content {
+                    line-height: 12px;
+                }
+            }
+        }
+    }
+
+    &_size {
+        &_medium {
+            padding-left: @fd-base-padding;
+            padding-right: @fd-base-padding;
+            height: 3 * @fd-base-padding;
+            min-width: 17px;
+
+            .br-badge__content {
+                font-size: @fd-font-size_medium-small;
+                line-height: 3 * @fd-base-padding;
+            }
+        }
+
+        &_small {
+            padding-left: 0.5 * @fd-base-padding;
+            padding-right: 0.5 * @fd-base-padding;
+            height: 16px;
+            line-height: 2 * @fd-base-padding;
+            min-width: 12px;
+
+            .br-badge__content {
+                font-size: @fd-font-size_small;
+                line-height: 16px;
+            }
+        }
+    }
+
+    &__content {
+        vertical-align: top;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.33;
+        letter-spacing: 0.4px;
+        padding: 1px 1px 1px 1px;
+    }
+}
