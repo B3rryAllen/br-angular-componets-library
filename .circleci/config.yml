@@ -3,10 +3,12 @@ orbs:
   browser-tools: circleci/browser-tools@1.2.3
 jobs:
   build:
-    working_directory: ~/br
+    working_directory: ~/br-angular-components-library
     docker:
       - image: cimg/node:16.13.1-browsers
     steps:
+      - checkout
+      - run: yarn install
       - browser-tools/install-chrome
       - browser-tools/install-chromedriver
       - run:
@@ -14,12 +16,9 @@ jobs:
             google-chrome --version
             chromedriver --version
           name: Check install
-      - checkout
-      - restore_cache:
-          key: br-{{ .Branch }}-{{ checksum "package-lock.json" }}
-      - run: yarn install
+      - run: yarn run build
       - save_cache:
-          key: br-{{ .Branch }}-{{ checksum "package-lock.json" }}
+          key: br-angular-components-library-{{ .Branch }}-{{ checksum "yarn.json" }}
           paths:
             - "node_modules"
       - run: yarn run test

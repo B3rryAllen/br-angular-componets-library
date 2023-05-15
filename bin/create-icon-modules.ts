@@ -9,6 +9,10 @@ const baseDir = join(__dirname, '..')
 const srcDir = join(baseDir, SRC_PATH)
 const destDir = join(baseDir, DEST_PATH)
 
+if (!fs.existsSync(destDir)) {
+    fs.mkdirSync(destDir, { recursive: true })
+}
+
 fs.readdir(srcDir, (err, files) => {
     files.forEach((file) => {
         const srcIcon = join(srcDir, file)
