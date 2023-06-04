@@ -1,8 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing'
-
-import { BrIconComponent } from './br-icon.component'
 import { By } from '@angular/platform-browser'
+import { BR_LIB_CONFIG } from '../../../br-lib.config.token'
+import { Theme } from '../../../theme'
 import { BrIconsModule } from '../br-icons.module'
+import { BrIconComponent } from './br-icon.component'
 
 describe('BrIconComponent', () => {
     let component: BrIconComponent
@@ -11,6 +12,12 @@ describe('BrIconComponent', () => {
     beforeEach(async () => {
         await TestBed.configureTestingModule({
             imports: [BrIconsModule],
+            providers: [
+                {
+                    provide: BR_LIB_CONFIG,
+                    useValue: { theme: Theme.br },
+                },
+            ],
         }).compileComponents()
     })
 

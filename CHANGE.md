@@ -6,7 +6,7 @@
 
 #### Authors
 
--   Massimo De Lorenzo ([@berry](https://github.com/shilman))
+-   Massimo De Lorenzo ([@berry])
 
 # v0.0.2 (Sun Jan 30 2022)
 

@@ -1,0 +1,14 @@
+<span
+    class="br-badge br-badge_info"
+    [class.br]="theme === 'br'"
+    [class.ca]="theme === 'ca'"
+    [class.br-badge_primary]="type === 'primary'"
+    [class.br-badge_secondary]="type === 'secondary'"
+    [class.br-badge_default]="type === 'default'"
+    [class.br-badge_error]="type === 'error'"
+    [class.br-badge_size_medium]="size === 'medium'"
+    [class.br-badge_size_small]="size === 'small'"
+    [class.br-badge_with-border]="border === 'border'"
+>
+    <span class="br-badge__content">{{ count }}</span>
+</span>
