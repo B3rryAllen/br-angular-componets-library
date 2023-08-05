@@ -1,9 +1,9 @@
 @import '../../../../../styles/br-all';
 
 .br-badge {
-    font-family: @fdr-font-family_default;
+    font-family: $br-font-family_default;
 
-    opacity: @fd-font-opacity_no;
+    opacity: $fd-font-opacity_no;
     background-clip: padding-box;
     z-index: 3;
     display: inline-block;
@@ -11,12 +11,12 @@
     right: -2px;
     padding: 0;
     height: 19px;
-    border-radius: @fde-radius-large;
+    border-radius: $br-radius_medium;
     border: 0;
     text-align: center;
 
     &_info {
-        border-radius: @fde-radius-xlarge;
+        border-radius: $br-radius-xlarge;
 
         .br-badge__content {
             font-weight: 600;
@@ -28,7 +28,7 @@
         background-color: var(--fdr-color_primary-500);
 
         .br-badge__content {
-            color: @fd-color_white;
+            color: $fd-color_white;
         }
     }
 
@@ -36,7 +36,7 @@
         background-color: var(--fdr-color_primary-700);
 
         .br-badge__content {
-            color: @fd-color_white;
+            color: $fd-color_white;
         }
     }
 
@@ -49,15 +49,15 @@
     }
 
     &_error {
-        background-color: @fd-color_badge;
+        background-color: $fd-color_badge;
 
         .br-badge__content {
-            color: @fd-color_white;
+            color: $fd-color_white;
         }
     }
 
     &_with-border {
-        border: solid 2px @fd-color_white;
+        border: solid 2px $fd-color_white;
 
         &.br-badge_size {
             &_medium {
@@ -79,26 +79,26 @@
 
     &_size {
         &_medium {
-            padding-left: @fd-base-padding;
-            padding-right: @fd-base-padding;
-            height: 3 * @fd-base-padding;
+            padding-left: $br-base-padding;
+            padding-right: $br-base-padding;
+            height: 3 * $br-base-padding;
             min-width: 17px;
 
             .br-badge__content {
-                font-size: @fd-font-size_medium-small;
-                line-height: 3 * @fd-base-padding;
+                font-size: $fd-font-size_medium-small;
+                line-height: 3 * $br-base-padding;
             }
         }
 
         &_small {
-            padding-left: 0.5 * @fd-base-padding;
-            padding-right: 0.5 * @fd-base-padding;
+            padding-left: 0.5 * $br-base-padding;
+            padding-right: 0.5 * $br-base-padding;
             height: 16px;
-            line-height: 2 * @fd-base-padding;
+            line-height: 2 * $br-base-padding;
             min-width: 12px;
 
             .br-badge__content {
-                font-size: @fd-font-size_small;
+                font-size: $fd-font-size_small;
                 line-height: 16px;
             }
         }

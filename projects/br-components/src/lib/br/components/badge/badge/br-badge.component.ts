@@ -9,7 +9,7 @@ import { BadgeType } from '../models/badge-type'
 @Component({
     selector: 'br-badge',
     templateUrl: './br-badge.component.html',
-    styleUrls: ['./br-badge.component.less'],
+    styleUrls: ['./br-badge.component.scss'],
 })
 export class BrBadgeComponent {
     @Input()

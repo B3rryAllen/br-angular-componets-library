@@ -1,0 +1,224 @@
+@use 'sass:list';
+@use 'sass:string';
+
+@import 'palette/br-palette';
+
+/* Font */
+$br-font-family_default: Montserrat;
+
+$fd-font-size_structure: 16px;
+
+/* Font size */
+$fdr-font-size_info: 10px;
+$fdr-font-size_badge: 11px;
+$fdr-font-size_smallest: 12px;
+$fdr-font-size_smaller: 14px;
+$fdr-font-size_small: 16px;
+$fdr-font-size_check: 18px;
+
+$fdr-font-size_small-to-medium: 20px;
+$fdr-font-size_medium: 24px;
+$fdr-font-size_medium-to-large: 34px;
+
+$fdr-font-size_large: 48px;
+$fdr-font-size_larger: 60px;
+$fdr-font-size_largest: 96px;
+
+/* Opacity */
+$fd-font-opacity_no: 1;
+$fd-font-opacity_dark: 0.8;
+$fd-font-opacity_medium: 0.6;
+$fd-font-opacity_light: 0.4;
+$fd-font-opacity_lightest: 0.2;
+
+$fd-font-size_default: 15px;
+$fd-font-size_table: 14px;
+$fd-font-size_input: 14px;
+$fd-font-size_smallest: 8px;
+$fd-font-size_smaller: 10px;
+$fd-font-size_small: 11px;
+$fd-font-size_medium-small: 14px;
+$fd-font-size_medium-to-small: 15px;
+$fd-font-size_medium: 17px;
+$fd-font-size_medium-to-large: 19px;
+$fd-font-size_medium-large: 22px;
+$fd-font-size_large: 24px;
+$fd-font-size_extra-large: 27px;
+$fd-font-size_xxl: 35px;
+
+$fde-font-size_small: 12px;
+
+@mixin color($color, $emphasis) {
+    $_color: 'fdr-color-font_#{$color}_#{$emphasis}';
+    color: $_color;
+}
+
+@mixin _generate-colors($i: 1) {
+    @while $i <= 4 {
+        $_colors: dark, light, primary, secondary;
+        $extracted: list.nth($_colors, $i);
+
+        &_#{$extracted} {
+            &_1 {
+                @include color($extracted, 1);
+            }
+            &_2 {
+                @include color($extracted, 2);
+            }
+            &_3 {
+                @include color($extracted, 3);
+            }
+        }
+        @include _generate-colors($i + 1);
+    }
+}
+
+@mixin generate-colors() {
+    @include _generate-colors();
+    &_danger {
+        color: $fd-color_danger;
+    }
+    &_success {
+        color: $fd-color_success;
+    }
+    &_inherit {
+        color: inherit;
+    }
+}
+
+@mixin fd-font-subtitle-1() {
+    font-family: $br-font-family_default;
+    font-size: $fdr-font-size_small;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.15px;
+}
+
+@mixin fd-font-h1() {
+    font-size: $fdr-font-size_largest;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -1.5px;
+}
+
+@mixin fd-font-h2() {
+    font-size: $fdr-font-size_larger;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.25px;
+}
+
+@mixin fd-font-h3() {
+    font-size: $fdr-font-size_large;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.25px;
+}
+
+@mixin fd-font-h4() {
+    font-size: $fdr-font-size_medium-to-large;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.25px;
+}
+
+@mixin fd-font-h5() {
+    font-size: $fdr-font-size_medium;
+    font-weight: 600;
+    line-height: 1.33;
+    letter-spacing: normal;
+}
+
+@mixin fd-font-h6() {
+    font-size: $fdr-font-size_small-to-medium;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.25px;
+}
+
+@mixin fd-font-p-title() {
+    font-size: $fdr-font-size_small-to-medium;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.25px;
+}
+
+@mixin fd-font-body-1() {
+    font-size: $fdr-font-size_small;
+    font-weight: 500;
+    line-height: 1.75;
+    letter-spacing: 0.5px;
+}
+
+@mixin fd-font-body-2() {
+    font-size: $fdr-font-size_smaller;
+    font-weight: 500;
+    line-height: 1.43;
+    letter-spacing: 0.25px;
+}
+
+@mixin fd-font-button() {
+    font-size: $fdr-font-size_smaller;
+    font-weight: 600;
+    font-style: normal;
+    line-height: 1.14;
+    letter-spacing: 0.25px;
+}
+
+@mixin fd-font-caption() {
+    font-size: $fdr-font-size_smallest;
+    font-weight: 500;
+    line-height: 1.33;
+    letter-spacing: 0.4px;
+}
+
+@mixin fd-font-badge() {
+    font-size: $fdr-font-size_badge;
+    font-weight: 600;
+    line-height: 1.45em;
+    letter-spacing: normal;
+}
+
+@mixin fd-font-overline() {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.33;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+@mixin fd-font-info() {
+    font-size: $fdr-font-size_info;
+    font-weight: 500;
+    letter-spacing: 0.33px;
+}
+
+@mixin fd-font-card-public-title() {
+    font-size: $fdr-font-size_check;
+    font-weight: 700;
+    line-height: 1.78;
+    letter-spacing: normal;
+}
+
+@mixin fd-filter-title() {
+    @include fd-font-body-2();
+    font-weight: 600;
+    color: $fd-color_dark;
+    opacity: $fd-font-opacity_dark;
+
+    margin-right: 16px;
+}
+
+@mixin fd-table-heading() {
+    font-size: $fdr-font-size_smallest;
+    font-weight: 500;
+    line-height: 1.33;
+    letter-spacing: 2px;
+}
+
+@mixin fd-font-label() {
+    font-size: $fdr-font-size_smaller;
+    font-weight: 600;
+    line-height: 1.43;
+    letter-spacing: 0.25px;
+}

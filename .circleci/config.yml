@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-  browser-tools: circleci/browser-tools@1.2.3
+  browser-tools: circleci/browser-tools@1.4.3
 jobs:
   build:
     working_directory: ~/br-angular-components-library
@@ -18,7 +18,7 @@ jobs:
           name: Check install
       - run: yarn run build
       - save_cache:
-          key: br-angular-components-library-{{ .Branch }}-{{ checksum "yarn.json" }}
+          key: br-angular-components-library-{{ .Branch }}-{{ checksum "package.json" }}
           paths:
             - "node_modules"
       - run: yarn run test

@@ -6,7 +6,7 @@ export type BrIconSize = 'small' | 'medium' | 'large' | 'full';
 @Component({
   selector: 'br-icon',
   templateUrl: 'br-icon.component.html',
-  styleUrls: ['./br-icon.component.less'],
+  styleUrls: ['./br-icon.component.scss'],
 })
 export class BrIconComponent {
     @Input() name?: IconNames;
