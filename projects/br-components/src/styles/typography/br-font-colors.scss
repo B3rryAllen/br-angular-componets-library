@@ -1,0 +1,16 @@
+@use '../palette/br-palette' as palette;
+
+$colors-font: (
+    fdr-color-font_dark_1: lighten(palette.$fd-color_dark, 20%),
+    fdr-color-font_dark_2: lighten(palette.$fd-color_dark, 40%),
+    fdr-color-font_dark_3: lighten(palette.$fd-color_dark, 60%),
+    fdr-color-font_light_1: palette.$fd-color_white,
+    fdr-color-font_light_2: lighten(palette.$fd-color_white, 40%),
+    fdr-color-font_light_3: lighten(palette.$fd-color_white, 60%),
+    fdr-color-font_primary_1: var(--fdr-color_primary-500),
+    fdr-color-font_primary_2: rgba(var(--fdr-color_primary-500), 0.4),
+    fdr-color-font_primary_3: rgba(var(--fdr-color_primary-500), 0.6),
+    fdr-color-font_secondary_1: var(--fdr-color_secondary-900),
+    fdr-color-font_secondary_2: rgba(var(--fdr-color_secondary-900), 0.4),
+    fdr-color-font_secondary_3: rgba(var(--fdr-color_secondary-900), 0.6),
+);

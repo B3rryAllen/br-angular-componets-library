@@ -1,6 +1,8 @@
 /*
  * Public API Surface of br-lib-components
  */
+export * from './lib/br/components/accordion/accordion/br-accordion/br-accordion.component'
+export * from './lib/br/components/accordion/br-accordion.module'
 export * from './lib/br/components/badge/badge/br-badge.component'
 export * from './lib/br/components/badge/br-badge.module'
 export * from './lib/br/components/badge/models/badge-border'

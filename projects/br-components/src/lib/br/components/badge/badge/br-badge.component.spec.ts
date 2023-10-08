@@ -1,7 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing'
 import { By } from '@angular/platform-browser'
-import { BR_LIB_CONFIG } from '../../../br-lib.config.token'
-import { Theme } from '../../../theme'
+import { BrLibModule } from '../../../br-lib.module'
 import { BrBadgeModule } from '../br-badge.module'
 import { BrBadgeComponent } from './br-badge.component'
 
@@ -11,13 +10,7 @@ describe('BrBadgeComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            imports: [BrBadgeModule],
-            providers: [
-                {
-                    provide: BR_LIB_CONFIG,
-                    useValue: { theme: Theme.br },
-                },
-            ],
+            imports: [BrLibModule.forRoot(), BrBadgeModule],
         }).compileComponents()
     })
 

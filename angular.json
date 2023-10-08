@@ -1,49 +1,52 @@
 {
-  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1,
-  "newProjectRoot": "projects",
-  "projects": {
-    "br-components": {
-      "projectType": "library",
-      "root": "projects/br-components",
-      "sourceRoot": "projects/br-components/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "tsConfig": "projects/br-components/tsconfig.lib.json",
-            "project": "projects/br-components/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "projects/br-components/tsconfig.lib.prod.json"
+    "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+    "version": 1,
+    "newProjectRoot": "projects",
+    "projects": {
+        "br-components": {
+            "projectType": "library",
+            "root": "projects/br-components",
+            "sourceRoot": "projects/br-components/src",
+            "prefix": "lib",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:ng-packagr",
+                    "options": {
+                        "tsConfig": "projects/br-components/tsconfig.lib.json",
+                        "project": "projects/br-components/ng-package.json"
+                    },
+                    "configurations": {
+                        "production": {
+                            "tsConfig": "projects/br-components/tsconfig.lib.prod.json"
+                        }
+                    }
+                },
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "codeCoverage": true,
+                        "main": "projects/br-components/src/test.ts",
+                        "tsConfig": "projects/br-components/tsconfig.spec.json",
+                        "karmaConfig": "projects/br-components/karma.conf.js",
+                        "styles": [
+                            "projects/br-components/src/styles/br-all.scss"
+                        ]
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-eslint/builder:lint",
+                    "options": {
+                        "lintFilePatterns": [
+                            "projects/br-components/**/*.ts",
+                            "projects/br-components/**/*.html"
+                        ]
+                    }
+                }
             }
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "codeCoverage": true,
-            "main": "projects/br-components/src/test.ts",
-            "tsConfig": "projects/br-components/tsconfig.spec.json",
-            "karmaConfig": "projects/br-components/karma.conf.js"
-          }
-        },
-        "lint": {
-          "builder": "@angular-eslint/builder:lint",
-          "options": {
-            "lintFilePatterns": [
-              "projects/br-components/**/*.ts",
-              "projects/br-components/**/*.html"
-            ]
-          }
         }
-      }
+    },
+    "defaultProject": "br-components",
+    "cli": {
+        "defaultCollection": "@angular-eslint/schematics"
     }
-  },
-  "defaultProject": "br-components",
-  "cli": {
-    "defaultCollection": "@angular-eslint/schematics"
-  }
 }

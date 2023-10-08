@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing'
 import { By } from '@angular/platform-browser'
+import { AngularSvgIconModule } from 'angular-svg-icon'
 import { BR_LIB_CONFIG } from '../../../br-lib.config.token'
 import { Theme } from '../../../theme'
 import { BrIconsModule } from '../br-icons.module'
@@ -11,7 +12,7 @@ describe('BrIconComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            imports: [BrIconsModule],
+            imports: [BrIconsModule, AngularSvgIconModule.forRoot()],
             providers: [
                 {
                     provide: BR_LIB_CONFIG,

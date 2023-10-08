@@ -1,4 +1,5 @@
 import { moduleMetadata } from '@storybook/angular'
+import { AngularSvgIconModule } from 'angular-svg-icon'
 import { iconNames } from '../br-icon-provider'
 import { BrIconsModule } from '../br-icons.module'
 
@@ -24,7 +25,7 @@ export default {
     },
     decorators: [
         moduleMetadata({
-            imports: [BrIconsModule],
+            imports: [BrIconsModule, AngularSvgIconModule.forRoot()],
         }),
     ],
     title: 'Components / Icon',

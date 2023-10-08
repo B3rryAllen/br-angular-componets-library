@@ -1,6 +1,8 @@
+@import 'node_modules/bootstrap/scss/bootstrap';
 @import 'palette/br-palette.scss';
 @import 'palette/br-theme-palette';
 @import 'palette/ca-theme-palette';
 @import 'br-padding';
-@import 'br-fonts';
+@import 'typography/br-fonts';
 @import 'br-radius';
+@import 'typography/br-t-heading';

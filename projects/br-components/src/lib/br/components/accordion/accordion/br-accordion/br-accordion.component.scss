@@ -1,0 +1,64 @@
+@use '../../../../../../styles/br-all.scss';
+
+.br-accordion {
+    &_white {
+        .panel-group {
+            .panel-body {
+                background-color: br-all.$fd-color_white;
+            }
+        }
+    }
+
+    &__head {
+        @include br-all.fd-t-heading(7);
+        color: var(--fdr-color_secondary-900);
+        font-weight: bold;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        .fd2-accordion__icon {
+            transition: transform ease 0.3s;
+
+            &_open {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    .panel-group {
+        margin-bottom: 0;
+
+        .panel {
+            border-radius: br-all.$br-radius_small;
+            border: 0;
+            box-shadow: none;
+        }
+
+        .panel-collapse {
+            background-color: rgba(var(--fdr-color_tertiary-100), 0.4);
+            border-bottom-left-radius: br-all.$br-radius_small;
+            border-bottom-right-radius: br-all.$br-radius_small;
+        }
+
+        .panel-heading {
+            padding: 20px 16px 20px 16px;
+            border-radius: br-all.$br-radius_small;
+        }
+
+        .panel-body {
+            border-bottom-left-radius: br-all.$br-radius_small;
+            border-bottom-right-radius: br-all.$br-radius_small;
+        }
+
+        .panel-heading + .panel-collapse > .panel-body {
+            padding: 8px 16px 20px 16px;
+            border: 0;
+        }
+
+        .panel-default > .panel-heading {
+            background-color: rgba(var(--fdr-color_tertiary-100), 0.4);
+        }
+    }
+}

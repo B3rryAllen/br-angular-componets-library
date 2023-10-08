@@ -7,5 +7,4 @@ import { BrBadgeComponent } from './badge/br-badge.component'
     imports: [CommonModule],
     exports: [BrBadgeComponent],
 })
-export class BrBadgeModule {
-}
+export class BrBadgeModule {}

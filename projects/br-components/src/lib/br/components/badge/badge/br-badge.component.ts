@@ -1,5 +1,4 @@
 import { Component, Inject, Input } from '@angular/core'
-import { BrLibConfig } from '../../../br-lib.config'
 import { BR_LIB_CONFIG } from '../../../br-lib.config.token'
 import { Theme } from '../../../theme'
 import { BadgeBorder } from '../models/badge-border'
@@ -26,7 +25,9 @@ export class BrBadgeComponent {
 
     theme: Theme
 
-    constructor(@Inject(BR_LIB_CONFIG) private brLibConfig: BrLibConfig) {
-        this.theme = brLibConfig?.theme ?? Theme.br
+    constructor(
+        @Inject(BR_LIB_CONFIG) private brLibConfig = { theme: Theme.br },
+    ) {
+        this.theme = brLibConfig.theme
     }
 }

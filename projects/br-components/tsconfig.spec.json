@@ -1,21 +1,14 @@
 /* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
-  "extends": "../../tsconfig.json",
-  "compilerOptions": {
-    "baseUrl": "./src",
-    "outDir": "../../out-tsc/spec",
-    "types": [
-      "jasmine"
-    ],
-    "paths": {
-      "*": ["*", "generated/*"]
-    }
-  },
-  "files": [
-    "src/test.ts"
-  ],
-  "include": [
-    "**/*.spec.ts",
-    "**/*.d.ts"
-  ]
+    "extends": "../../tsconfig.json",
+    "compilerOptions": {
+        "baseUrl": "./src",
+        "outDir": "../../out-tsc/spec",
+        "types": ["jasmine"],
+        "paths": {
+            "*": ["*", "generated/*"]
+        }
+    },
+    "files": ["src/test.ts"],
+    "include": ["**/*.spec.ts", "**/*.d.ts"]
 }

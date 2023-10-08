@@ -1,15 +1,35 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, EventEmitter, Inject, Input, Output } from '@angular/core'
+import { setTheme } from 'ngx-bootstrap/utils'
+import { BR_LIB_CONFIG } from '../../../../br-lib.config.token'
+import { Theme } from '../../../../theme'
 @Component({
-  selector: 'lib-br-accordion',
-  templateUrl: './br-accordion.component.html',
-  styleUrls: ['./br-accordion.component.css']
+    selector: 'br-accordion',
+    templateUrl: './br-accordion.component.html',
+    styleUrls: ['./br-accordion.component.scss'],
 })
-export class BrAccordionComponent implements OnInit {
+export class BrAccordionComponent {
+    @Input()
+    isOpen = false
 
-  constructor() { }
+    @Input()
+    title: string | undefined
 
-  ngOnInit(): void {
-  }
+    @Input()
+    contentBackgroundColor: 'Gray' | 'White' = 'Gray'
 
+    @Output()
+    isOpenChange = new EventEmitter<boolean>()
+
+    theme: Theme
+
+    constructor(
+        @Inject(BR_LIB_CONFIG) private brLibConfig = { theme: Theme.br },
+    ) {
+        this.theme = brLibConfig.theme
+        setTheme('bs4')
+    }
+
+    isOpenChangeHandler($event: boolean) {
+        this.isOpenChange.emit($event)
+    }
 }

@@ -1,7 +1,7 @@
-import { SvgIconRegistryService } from 'angular-svg-icon'
 import { APP_INITIALIZER } from '@angular/core'
-import * as chevronDownSvg from 'icons/chevron-down_cc.svg'
+import { SvgIconRegistryService } from 'angular-svg-icon'
 import * as arrowLeftSvg from 'icons/arrow-left_cc.svg'
+import * as chevronDownSvg from 'icons/chevron-down_cc.svg'
 
 const icons = {
     arrowLeft: `${arrowLeftSvg.default}`,
@@ -103,7 +103,7 @@ export const brIconProvider = {
     multi: true,
     provide: APP_INITIALIZER,
     useFactory: (iconRegistryService: SvgIconRegistryService) => (): void => {
-      for (const iconName of iconNames) {
+        for (const iconName of iconNames) {
             iconRegistryService.addSvg(iconName, icons[iconName])
         }
     },
