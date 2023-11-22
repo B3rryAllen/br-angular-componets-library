@@ -2,9 +2,9 @@
   "name": "br-components",
   "version": "0.0.1",
   "peerDependencies": {
-    "@angular/common": "~12.2.1",
-    "@angular/core": "~12.2.1",
-    "bootstrap": "5.3.1"
+    "@angular/common": "~13.4.0",
+    "@angular/core": "~13.4.0",
+    "bootstrap": "~5.3.1"
   },
   "dependencies": {
     "tslib": "^2.0.0"

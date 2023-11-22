@@ -1,4 +1,11 @@
-import { Component, EventEmitter, Inject, Input, Output } from '@angular/core'
+import {
+    Component,
+    EventEmitter,
+    Inject,
+    Input,
+    Output,
+    ViewEncapsulation,
+} from '@angular/core'
 import { setTheme } from 'ngx-bootstrap/utils'
 import { BR_LIB_CONFIG } from '../../../../br-lib.config.token'
 import { Theme } from '../../../../theme'
@@ -6,6 +13,7 @@ import { Theme } from '../../../../theme'
     selector: 'br-accordion',
     templateUrl: './br-accordion.component.html',
     styleUrls: ['./br-accordion.component.scss'],
+    encapsulation: ViewEncapsulation.None,
 })
 export class BrAccordionComponent {
     @Input()

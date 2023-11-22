@@ -25,7 +25,7 @@
                     "builder": "@angular-devkit/build-angular:karma",
                     "options": {
                         "codeCoverage": true,
-                        "main": "projects/br-components/src/test.ts",
+                        "polyfills": ["zone.js", "zone.js/testing"],
                         "tsConfig": "projects/br-components/tsconfig.spec.json",
                         "karmaConfig": "projects/br-components/karma.conf.js",
                         "styles": [
@@ -41,11 +41,30 @@
                             "projects/br-components/**/*.html"
                         ]
                     }
+                },
+                "storybook": {
+                    "builder": "@storybook/angular:start-storybook",
+                    "options": {
+                        "configDir": ".storybook",
+                        "browserTarget": "br-components:build",
+                        "compodoc": true,
+                        "compodocArgs": ["-e", "json", "-d", "."],
+                        "port": 6006
+                    }
+                },
+                "build-storybook": {
+                    "builder": "@storybook/angular:build-storybook",
+                    "options": {
+                        "configDir": ".storybook",
+                        "browserTarget": "br-components:build",
+                        "compodoc": true,
+                        "compodocArgs": ["-e", "json", "-d", "."],
+                        "outputDir": "dist/storybook/storybook-static"
+                    }
                 }
             }
         }
     },
-    "defaultProject": "br-components",
     "cli": {
         "defaultCollection": "@angular-eslint/schematics"
     }

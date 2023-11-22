@@ -1,8 +1,10 @@
 {
     "extends": "../projects/br-components/tsconfig.lib.json",
     "compilerOptions": {
+        "allowSyntheticDefaultImports": true,
         "types": ["node"]
     },
+    "include": ["../**/*.stories.ts"],
     "exclude": [
         "../src/test.ts",
         "../src/**/*.spec.ts",

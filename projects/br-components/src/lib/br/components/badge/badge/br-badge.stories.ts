@@ -1,10 +1,13 @@
-import { moduleMetadata } from '@storybook/angular'
+import { applicationConfig, moduleMetadata } from '@storybook/angular'
 import { BrLibModule } from '../../../br-lib.module'
 import { BrBadgeModule } from '../br-badge.module'
 import { BadgeBorder } from '../models/badge-border'
 import { BadgeSize } from '../models/badge-size'
 import { BadgeType } from '../models/badge-type'
 import { BrBadgeComponent } from './br-badge.component'
+import { importProvidersFrom } from '@angular/core'
+import { AngularSvgIconModule } from 'angular-svg-icon'
+import { BrIconsModule } from '../../icons/br-icons.module'
 
 export default {
     argTypes: {
@@ -29,8 +32,11 @@ export default {
     },
     component: BrBadgeComponent,
     decorators: [
+        applicationConfig({
+            providers: [importProvidersFrom([BrLibModule.forRoot()])],
+        }),
         moduleMetadata({
-            imports: [BrLibModule.forRoot(), BrBadgeModule],
+            imports: [BrBadgeModule],
         }),
     ],
     title: 'Components / Badge',

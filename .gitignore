@@ -4,6 +4,7 @@
 /dist
 /tmp
 /out-tsc
+
 # Only exists if Bazel was run
 /bazel-out
 
@@ -60,3 +61,6 @@ coverage
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+# Miscellaneous
+/.angular/

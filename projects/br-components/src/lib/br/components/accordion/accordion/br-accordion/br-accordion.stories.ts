@@ -1,9 +1,11 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { moduleMetadata } from '@storybook/angular'
+import { applicationConfig, moduleMetadata } from '@storybook/angular'
 import { AngularSvgIconModule } from 'angular-svg-icon'
 import { AccordionModule } from 'ngx-bootstrap/accordion'
 import { BrLibModule } from '../../../../br-lib.module'
 import { BrAccordionModule } from '../../br-accordion.module'
+import { importProvidersFrom } from '@angular/core'
+import { BrIconsModule } from '../../../icons/br-icons.module'
 
 export default {
     argTypes: {
@@ -15,14 +17,18 @@ export default {
         },
     },
     decorators: [
-        moduleMetadata({
-            imports: [
-                BrLibModule.forRoot(),
-                AccordionModule.forRoot(),
-                AngularSvgIconModule.forRoot(),
-                BrAccordionModule,
-                BrowserAnimationsModule,
+        applicationConfig({
+            providers: [
+                importProvidersFrom([
+                    BrLibModule.forRoot(),
+                    AccordionModule.forRoot(),
+                    AngularSvgIconModule.forRoot(),
+                    BrIconsModule,
+                ]),
             ],
+        }),
+        moduleMetadata({
+            imports: [BrAccordionModule, BrowserAnimationsModule],
         }),
     ],
     title: 'Components / Accordion',
@@ -42,9 +48,19 @@ export const Basic = () => ({
     },
 })
 
-export const BackgroundColorWhite = () => ({
+export const WithBackgroundColorWhite = () => ({
     template: `
               <br-accordion [title]="title" contentBackgroundColor="White">
+                <span style="text-align: center">Contenuto</span>
+              </br-accordion>`,
+    props: {
+        ...commonArgs,
+    },
+})
+
+export const Opened = () => ({
+    template: `
+              <br-accordion [title]="title" [isOpen]="true">
                 <span style="text-align: center">Contenuto</span>
               </br-accordion>`,
     props: {
