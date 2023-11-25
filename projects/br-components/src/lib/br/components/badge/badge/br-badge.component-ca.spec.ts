@@ -1,13 +1,12 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing'
-import { By } from '@angular/platform-browser'
-import { BR_LIB_CONFIG } from '../../../br-lib.config.token'
-import { Theme } from '../../../theme'
-import { BrBadgeModule } from '../br-badge.module'
-import { BrBadgeComponent } from './br-badge.component'
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
+import { BR_LIB_CONFIG } from '../../../br-lib.config.token';
+import { Theme } from '../../../theme';
+import { BrBadgeModule } from '../br-badge.module';
+import { BrBadgeComponent } from './br-badge.component';
 
 describe('BrBadgeComponent', () => {
-    let component: BrBadgeComponent
-    let fixture: ComponentFixture<BrBadgeComponent>
+    let fixture: ComponentFixture<BrBadgeComponent>;
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
@@ -18,18 +17,17 @@ describe('BrBadgeComponent', () => {
                     useValue: { theme: Theme.ca },
                 },
             ],
-        }).compileComponents()
-    })
+        }).compileComponents();
+    });
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(BrBadgeComponent)
-        component = fixture.componentInstance
-        fixture.detectChanges()
-    })
+        fixture = TestBed.createComponent(BrBadgeComponent);
+        fixture.detectChanges();
+    });
 
     it('should hava class ca', () => {
-        const el = fixture.debugElement.query(By.css('.br-badge'))
-        expect(el).toBeTruthy()
-        expect(el.nativeElement.classList).toContain('ca')
-    })
-})
+        const el = fixture.debugElement.query(By.css('.br-badge'));
+        expect(el).toBeTruthy();
+        expect(el.nativeElement.classList).toContain('ca');
+    });
+});

@@ -1,1 +1,1 @@
-export type BadgeType = 'primary' | 'secondary' | 'error' | 'default'
+export type BadgeType = 'primary' | 'secondary' | 'error' | 'default';

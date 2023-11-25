@@ -1,7 +1,7 @@
-import { APP_INITIALIZER } from '@angular/core'
-import { SvgIconRegistryService } from 'angular-svg-icon'
-import * as arrowLeftSvg from 'icons/arrow-left_cc.svg'
-import * as chevronDownSvg from 'icons/chevron-down_cc.svg'
+import { APP_INITIALIZER } from '@angular/core';
+import { SvgIconRegistryService } from 'angular-svg-icon';
+import * as arrowLeftSvg from 'icons/arrow-left_cc.svg';
+import * as chevronDownSvg from 'icons/chevron-down_cc.svg';
 
 const icons = {
     arrowLeft: `${arrowLeftSvg.default}`,
@@ -92,11 +92,11 @@ const icons = {
     // removeFile: require('!!raw-loader!../../../src/assets/img/reject_cc.svg')
     //     .default,
     // time: require('!!raw-loader!../../../src/assets/img/time.svg').default,
-}
+};
 
-export const iconNames = Object.keys(icons) as Array<IconNames>
+export const iconNames = Object.keys(icons) as Array<IconNames>;
 
-export type IconNames = keyof typeof icons
+export type IconNames = keyof typeof icons;
 
 export const brIconProvider = {
     deps: [SvgIconRegistryService],
@@ -104,7 +104,7 @@ export const brIconProvider = {
     provide: APP_INITIALIZER,
     useFactory: (iconRegistryService: SvgIconRegistryService) => (): void => {
         for (const iconName of iconNames) {
-            iconRegistryService.addSvg(iconName, icons[iconName])
+            iconRegistryService.addSvg(iconName, icons[iconName]);
         }
     },
-}
+};

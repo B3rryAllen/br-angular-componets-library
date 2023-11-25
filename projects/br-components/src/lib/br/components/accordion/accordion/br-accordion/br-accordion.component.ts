@@ -5,10 +5,10 @@ import {
     Input,
     Output,
     ViewEncapsulation,
-} from '@angular/core'
-import { setTheme } from 'ngx-bootstrap/utils'
-import { BR_LIB_CONFIG } from '../../../../br-lib.config.token'
-import { Theme } from '../../../../theme'
+} from '@angular/core';
+import { setTheme } from 'ngx-bootstrap/utils';
+import { BR_LIB_CONFIG } from '../../../../br-lib.config.token';
+import { Theme } from '../../../../theme';
 @Component({
     selector: 'br-accordion',
     templateUrl: './br-accordion.component.html',
@@ -17,27 +17,27 @@ import { Theme } from '../../../../theme'
 })
 export class BrAccordionComponent {
     @Input()
-    isOpen = false
+    isOpen = false;
 
     @Input()
-    title: string | undefined
+    title: string | undefined;
 
     @Input()
-    contentBackgroundColor: 'Gray' | 'White' = 'Gray'
+    contentBackgroundColor: 'Gray' | 'White' = 'Gray';
 
     @Output()
-    isOpenChange = new EventEmitter<boolean>()
+    isOpenChange = new EventEmitter<boolean>();
 
-    theme: Theme
+    theme: Theme;
 
     constructor(
-        @Inject(BR_LIB_CONFIG) private brLibConfig = { theme: Theme.br },
+        @Inject(BR_LIB_CONFIG) private brLibConfig = { theme: Theme.br }
     ) {
-        this.theme = brLibConfig.theme
-        setTheme('bs4')
+        this.theme = brLibConfig.theme;
+        setTheme('bs4');
     }
 
     isOpenChangeHandler($event: boolean) {
-        this.isOpenChange.emit($event)
+        this.isOpenChange.emit($event);
     }
 }

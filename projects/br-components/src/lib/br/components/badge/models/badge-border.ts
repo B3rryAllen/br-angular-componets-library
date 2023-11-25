@@ -1,1 +1,1 @@
-export type BadgeBorder = 'none' | 'border'
+export type BadgeBorder = 'none' | 'border';

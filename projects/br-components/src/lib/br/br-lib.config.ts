@@ -1,5 +1,5 @@
-import { Theme } from './theme'
+import { Theme } from './theme';
 
 export class BrLibConfig {
-    theme: Theme | undefined
+    theme: Theme | undefined;
 }

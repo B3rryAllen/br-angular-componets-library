@@ -1,11 +1,11 @@
-import { CommonModule } from '@angular/common'
-import { ModuleWithProviders, NgModule } from '@angular/core'
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { BrLibConfig } from './br-lib.config'
-import { BR_LIB_CONFIG } from './br-lib.config.token'
-import { BrAccordionModule } from './components/accordion/br-accordion.module'
-import { BrBadgeModule } from './components/badge/br-badge.module'
-import { BrIconsModule } from './components/icons/br-icons.module'
+import { CommonModule } from '@angular/common';
+import { ModuleWithProviders, NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrLibConfig } from './br-lib.config';
+import { BR_LIB_CONFIG } from './br-lib.config.token';
+import { BrAccordionModule } from './components/accordion/br-accordion.module';
+import { BrBadgeModule } from './components/badge/br-badge.module';
+import { BrIconsModule } from './components/icons/br-icons.module';
 
 @NgModule({
     imports: [
@@ -18,7 +18,7 @@ import { BrIconsModule } from './components/icons/br-icons.module'
 })
 export class BrLibModule {
     static forRoot(
-        brLibConfig?: BrLibConfig,
+        brLibConfig?: BrLibConfig
     ): ModuleWithProviders<BrBadgeModule> {
         return {
             ngModule: BrBadgeModule,
@@ -33,12 +33,12 @@ export class BrLibModule {
                     deps: [BR_LIB_CONFIG],
                 },
             ],
-        }
+        };
     }
 }
 
 export function provideConfig(brLibConfig: BrLibConfig): BrLibConfig {
     return {
         theme: brLibConfig.theme,
-    }
+    };
 }

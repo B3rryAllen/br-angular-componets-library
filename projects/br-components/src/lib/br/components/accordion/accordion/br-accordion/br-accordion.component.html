@@ -2,22 +2,21 @@
     class="br-accordion"
     [class.br]="theme === 'br'"
     [class.ca]="theme === 'ca'"
-    [class.br-accordion_white]="contentBackgroundColor === 'White'"
->
+    [class.br-accordion_white]="contentBackgroundColor === 'White'">
     <accordion [isAnimated]="true">
         <accordion-group
             #accordionGroup
             [isOpen]="isOpen"
-            (isOpenChange)="isOpenChangeHandler($event)"
-        >
+            (isOpenChange)="isOpenChangeHandler($event)">
             <div class="br-accordion__head" accordion-heading>
                 <div>{{ title }}</div>
                 <br-icon
                     size="small"
                     name="chevronDown"
                     class="fd2-accordion__icon"
-                    [class.br-accordion__icon_open]="accordionGroup.isOpen"
-                ></br-icon>
+                    [class.br-accordion__icon_open]="
+                        accordionGroup.isOpen
+                    "></br-icon>
             </div>
             <ng-content></ng-content>
         </accordion-group>

@@ -1,1 +1,1 @@
-export type BadgeSize = 'small' | 'medium'
+export type BadgeSize = 'small' | 'medium';

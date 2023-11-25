@@ -1,11 +1,11 @@
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { applicationConfig, moduleMetadata } from '@storybook/angular'
-import { AngularSvgIconModule } from 'angular-svg-icon'
-import { AccordionModule } from 'ngx-bootstrap/accordion'
-import { BrLibModule } from '../../../../br-lib.module'
-import { BrAccordionModule } from '../../br-accordion.module'
-import { importProvidersFrom } from '@angular/core'
-import { BrIconsModule } from '../../../icons/br-icons.module'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { applicationConfig, moduleMetadata } from '@storybook/angular';
+import { AngularSvgIconModule } from 'angular-svg-icon';
+import { AccordionModule } from 'ngx-bootstrap/accordion';
+import { BrLibModule } from '../../../../br-lib.module';
+import { BrAccordionModule } from '../../br-accordion.module';
+import { importProvidersFrom } from '@angular/core';
+import { BrIconsModule } from '../../../icons/br-icons.module';
 
 export default {
     argTypes: {
@@ -32,11 +32,11 @@ export default {
         }),
     ],
     title: 'Components / Accordion',
-}
+};
 
 const commonArgs = {
     title: 'Divisioni aziendali',
-}
+};
 
 export const Basic = () => ({
     template: `
@@ -46,7 +46,7 @@ export const Basic = () => ({
     props: {
         ...commonArgs,
     },
-})
+});
 
 export const WithBackgroundColorWhite = () => ({
     template: `
@@ -56,7 +56,7 @@ export const WithBackgroundColorWhite = () => ({
     props: {
         ...commonArgs,
     },
-})
+});
 
 export const Opened = () => ({
     template: `
@@ -66,4 +66,4 @@ export const Opened = () => ({
     props: {
         ...commonArgs,
     },
-})
+});
