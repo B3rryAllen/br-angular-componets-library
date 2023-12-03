@@ -10,12 +10,14 @@ $br-font-family_default: Montserrat;
 
 $fd-font-size_structure: 16px;
 
+/* Br Fonts Sizes */
+$br-font-size_smallest: 12px;
+$br-font-size_smaller: 14px;
+$br-font-size_small: 16px;
+
 /* Font size */
 $fdr-font-size_info: 10px;
 $fdr-font-size_badge: 11px;
-$fdr-font-size_smallest: 12px;
-$fdr-font-size_smaller: 14px;
-$fdr-font-size_small: 16px;
 $fdr-font-size_check: 18px;
 
 $fdr-font-size_small-to-medium: 20px;
@@ -84,6 +86,12 @@ $fde-font-size_small: 12px;
     }
     &_success {
         color: palette.$fd-color_success;
+    }
+    &_white {
+        color: palette.$fd-color_white;
+    }
+    &_dark {
+        color: palette.$fd-color_dark;
     }
     &_inherit {
         color: inherit;

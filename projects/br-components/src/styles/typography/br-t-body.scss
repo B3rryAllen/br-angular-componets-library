@@ -1,0 +1,73 @@
+@use './br-fonts';
+@use '../palette/br-palette' as palette;
+@use './br-font-colors' as font-colors;
+@use '../br-reset';
+
+@mixin size($i) {
+    @if $i == 1 {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 28px;
+        letter-spacing: 0.5px;
+    }
+
+    @if $i == 2 {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+        letter-spacing: 0.25px;
+    }
+
+    @if $i == 3 {
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 16px;
+        letter-spacing: 0.4px;
+    }
+}
+
+@mixin generate-sizes($i: 1) {
+    @while $i<=3 {
+        &_#{$i} {
+            @include size($i);
+        }
+
+        $i: $i + 1;
+    }
+}
+
+@mixin fd-t-body($size: 1, $color: 'dark', $emphasis: 1) {
+    @include br-reset.reset-font();
+
+    b,
+    strong {
+        font-weight: 600;
+    }
+
+    &p {
+        margin: 0;
+        padding: 0;
+    }
+
+    > u {
+        text-decoration: underline;
+        text-decoration-style: dotted;
+    }
+
+    font-family: br-fonts.$br-font-family_default;
+
+    @include size($size);
+    @include br-fonts.color($color, $emphasis);
+}
+
+.fd-t-body {
+    @include fd-t-body();
+
+    &_size {
+        @include generate-sizes();
+    }
+
+    &_color {
+        @include br-fonts.generate-colors();
+    }
+}

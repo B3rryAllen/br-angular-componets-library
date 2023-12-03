@@ -1,5 +1,16 @@
-@mixin reset-heading() {
+@mixin reset-font() {
     font-size: inherit;
+    border: 0;
     margin: 0;
+    padding: 0;
     line-height: normal;
+}
+
+@mixin reset-label() {
+    display: inherit;
+    max-width: inherit;
+    margin: 0;
+    font-weight: normal;
+    font-size: inherit;
+    cursor: inherit;
 }

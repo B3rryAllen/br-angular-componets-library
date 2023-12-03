@@ -1,0 +1,45 @@
+@use './br-fonts';
+@use '../palette/br-palette' as palette;
+@use './br-font-colors' as font-colors;
+@use '../br-reset';
+
+@mixin size($i) {
+    @if $i == 1 {
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 1.33;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+}
+
+@mixin generate-sizes($i: 1) {
+    @while $i<=1 {
+        &_#{$i} {
+            @include size($i);
+        }
+
+        $i: $i + 1;
+    }
+}
+
+@mixin fd-t-overline($size: 1, $color: 'dark', $emphasis: 1) {
+    @include br-reset.reset-font();
+    font-family: br-fonts.$br-font-family_default;
+    white-space: nowrap;
+
+    @include size($size);
+    @include br-fonts.color($color, $emphasis);
+}
+
+.fd-t-overline {
+    @include fd-t-overline();
+
+    &_size {
+        @include generate-sizes();
+    }
+
+    &_color {
+        @include br-fonts.generate-colors();
+    }
+}
