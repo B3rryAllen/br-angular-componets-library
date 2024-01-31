@@ -1,0 +1,34 @@
+<button
+    class="br-button"
+    [class.br]="theme === 'br'"
+    [class.ca]="theme === 'ca'"
+    [class.br-button_primary]="buttonType === 'Primary'"
+    [class.br-button_secondary]="buttonType === 'Secondary'"
+    [class.br-button_transparent]="buttonType === 'Transparent'"
+    [class.br-button_link]="buttonType === 'Link'"
+    [class.br-button_size-large]="height === 'large'"
+    [class.br-button_size-medium]="height === 'medium'"
+    [class.br-button_size-small]="height === 'small'"
+    [class.br-button_size-micro]="height === 'micro'"
+    [class.br-button_width-full]="width === 'full'"
+    [class.br-button_with-image]="icon"
+    [class.fd-button_disabled]="disabled"
+    [disabled]="disabled"
+    (press)="onPressHandler()">
+    <div
+        class="br-button__text"
+        [class.br-button__text_with-column-gap]="!!this.contentCount">
+        <span class="br-button__icon" *ngIf="!!icon?.templateRef">
+            <ng-container [ngTemplateOutlet]="icon.templateRef"></ng-container>
+        </span>
+
+        <span *ngIf="label && label.length">{{ label }}</span>
+
+        <br-badge
+            *ngIf="count !== undefined && count !== null"
+            [count]="count"
+            [type]="buttonType === 'primary' ? 'primary' : 'secondary'"
+            size="small">
+        </br-badge>
+    </div>
+</button>

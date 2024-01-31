@@ -14,6 +14,7 @@
                     "options": {
                         "tsConfig": "projects/br-components/tsconfig.lib.json",
                         "project": "projects/br-components/ng-package.json"
+
                     },
                     "configurations": {
                         "production": {
@@ -30,7 +31,12 @@
                         "karmaConfig": "projects/br-components/karma.conf.js",
                         "styles": [
                             "projects/br-components/src/styles/br-all.scss"
-                        ]
+                        ],
+                        "stylePreprocessorOptions": {
+                            "includePaths": [
+                                "projects/br-components/src/styles"
+                            ]
+                        }
                     }
                 },
                 "lint": {
@@ -49,7 +55,12 @@
                         "browserTarget": "br-components:build",
                         "compodoc": true,
                         "compodocArgs": ["-e", "json", "-d", "."],
-                        "port": 6006
+                        "port": 6006,
+                        "stylePreprocessorOptions": {
+                            "includePaths": [
+                                "projects/br-components/src/styles"
+                            ]
+                        }
                     }
                 },
                 "build-storybook": {

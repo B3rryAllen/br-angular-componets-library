@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
     stories: ['../projects/**/*.stories.@(js|jsx|ts|tsx)'],
 
@@ -18,5 +20,18 @@ module.exports = {
 
     docs: {
         autodocs: true,
+    },
+
+    async webpackFinal(config, { configType }) {
+        config.module.rules.push(
+            {
+                test: /\.scss$/,
+                use: ['style-loader', 'css-loader', 'sass-loader'],
+                include: path.resolve(__dirname, '../projects/br-components/src/styles'),
+            },
+        );
+
+        console.log( JSON.stringify(config.module.rules) )
+        return config;
     },
 }

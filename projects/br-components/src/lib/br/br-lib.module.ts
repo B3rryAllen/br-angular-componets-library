@@ -9,11 +9,11 @@ import { BrIconsModule } from './components/icons/br-icons.module';
 
 @NgModule({
     imports: [
-        CommonModule,
-        BrowserAnimationsModule,
-        BrBadgeModule,
         BrAccordionModule,
+        BrBadgeModule,
         BrIconsModule,
+        BrowserAnimationsModule,
+        CommonModule,
     ],
 })
 export class BrLibModule {

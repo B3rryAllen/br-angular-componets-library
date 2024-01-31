@@ -1,0 +1,45 @@
+@import '../../../../../styles/br-all';
+
+@mixin button-type-secondary(
+    $bg,
+    $bg-hover,
+    $bg-active: var(--fdr-color_secondary-500),
+    $fg: var(--fdr-color_secondary-900),
+    $fg-hover: $fd-color_white) {
+
+    color: $fg;
+    background-color: $bg;
+    border: solid 1px $fg;
+
+    &:hover,
+    &:focus {
+        color: $fg-hover;
+        background-color: $bg-hover;
+
+        transition-duration: 0.2s;
+        transition-timing-function: ease;
+    }
+
+    &:active {
+        color: $fg-hover;
+        background-color: $bg-active;
+        border: solid 1px $bg-active;
+    }
+
+    &.br-button_disabled,
+    &:disabled {
+        opacity: 0.4;
+        cursor: default;
+        color: $fg;
+        background-color: $bg;
+        border: solid 1px $fg;
+
+        &:active,
+        &:hover,
+        &:focus {
+            color: $fg;
+            background-color: $bg;
+            border: solid 1px $fg;
+        }
+    }
+}

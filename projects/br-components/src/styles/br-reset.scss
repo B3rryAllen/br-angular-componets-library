@@ -14,3 +14,27 @@
     font-size: inherit;
     cursor: inherit;
 }
+
+@mixin reset-button() {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    background-color: transparent;
+
+    &:focus {
+        outline: 0;
+    }
+}
+
+@mixin reset-anchor() {
+    color: inherit;
+    text-decoration: none;
+    outline: 0;
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+        color: inherit;
+    }
+}

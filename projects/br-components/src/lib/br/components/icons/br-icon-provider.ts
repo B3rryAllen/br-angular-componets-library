@@ -1,7 +1,7 @@
 import { APP_INITIALIZER } from '@angular/core';
 import { SvgIconRegistryService } from 'angular-svg-icon';
-import * as arrowLeftSvg from 'icons/arrow-left_cc.svg';
-import * as chevronDownSvg from 'icons/chevron-down_cc.svg';
+import * as arrowLeftSvg from '../../icons/arrow-left_cc.svg';
+import * as chevronDownSvg from '../../icons/chevron-down_cc.svg';
 
 const icons = {
     arrowLeft: `${arrowLeftSvg.default}`,

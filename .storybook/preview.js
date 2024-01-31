@@ -1,5 +1,6 @@
-import { setCompodocJson } from '@storybook/addon-docs/angular'
-import docJson from '../dist/storybook/documentation.json'
+import { setCompodocJson } from "@storybook/addon-docs/angular";
+import docJson from "../dist/storybook/documentation.json";
+
 setCompodocJson(docJson)
 
 export const parameters = {
@@ -24,7 +25,7 @@ export const parameters = {
             },
             {
                 name: 'Berry',
-                value: '#f7f6f7',
+                value: '#C0C0C0',
             },
         ],
     },

@@ -1,12 +1,13 @@
 {
-  "name": "br-components",
-  "version": "0.0.1",
-  "peerDependencies": {
-    "@angular/common": "~13.4.0",
-    "@angular/core": "~13.4.0",
-    "bootstrap": "~5.3.1"
-  },
-  "dependencies": {
-    "tslib": "^2.0.0"
-  }
+    "name": "br-components",
+    "version": "0.0.1",
+    "peerDependencies": {
+        "@angular/common": "~13.4.0",
+        "@angular/core": "~13.4.0",
+        "bootstrap": "~5.3.1",
+        "ngx-bootstrap": "~11.0.2"
+    },
+    "dependencies": {
+        "tslib": "^2.0.0"
+    }
 }

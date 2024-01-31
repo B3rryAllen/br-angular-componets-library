@@ -64,3 +64,5 @@ coverage
 
 # Miscellaneous
 /.angular/
+
+/projects/br-components/src/lib/br/icons/

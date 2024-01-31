@@ -1,0 +1,185 @@
+@use 'br-reset' as br-reset;
+@use 'br-radius' as br-radius;
+@use 'br-padding' as br-padding;
+@use 'typography/br-t-caption' as fd-t-caption;
+@use 'typography/br-t-button' as fd-t-button;
+@use '_button-type-primary' as _button-type-primary;
+@use '_button-type-secondary' as _button-type-secondary;
+@use 'palette/br-palette' as palette;
+
+.br-button {
+    @include br-reset.reset-button();
+    @include br-reset.reset-anchor();
+
+    border-radius: br-radius.$br-radius-small;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+
+    &.br-button_size {
+
+        &-micro {
+            @include fd-t-caption.fd-t-caption();
+            height: 3 * br-padding.$br-base-padding;
+            padding: 1px 8px;
+
+            .br-button__icon {
+                width: 12px;
+                height: 12px;
+            }
+        }
+
+        &-small {
+            @include fd-t-caption.fd-t-caption();
+            height: 4 * br-padding.$br-base-padding;
+            padding: 1px 16px;
+
+            .fd2-button__icon {
+                width: 16px;
+                height: 16px;
+            }
+        }
+
+        &-medium {
+            @include fd-t-button.fd-t-button();
+            height: 5 * br-padding.$br-base-padding;
+            padding: 1px 24px;
+
+            .br-button__icon {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        &-large {
+            @include fd-t-button.fd-t-button();
+            height: 6 * br-padding.$br-base-padding;
+            padding: 1px 24px;
+
+            .br-button__icon {
+                width: 24px;
+                height: 24px;
+            }
+        }
+    }
+
+    &.br-button_width {
+        &-full {
+            width: 100%;
+        }
+    }
+
+    &.br-button_with-image {
+        &.br-button_size_medium {
+            padding: 1px 16px;
+        }
+
+        &.br-button_size_large {
+            padding: 1px 16px;
+        }
+    }
+
+    &.br-button_primary {
+        @include _button-type-primary.button-type-primary(var(--fdr-color_secondary-900), var(--fdr-color_secondary-700), var(--fdr-color_secondary-500));
+    }
+
+    &.br-button_secondary {
+        @include _button-type-secondary.button-type-secondary(palette.$br-color_white, var(--fdr-color_secondary-700));
+    }
+
+    &.br-button_transparent {
+        @include _button-type-secondary.button-type-secondary(palette.$br-color_transparent, var(--fdr-color_secondary-700));
+    }
+
+    .br-button__text {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+
+        &_with-column-gap {
+            column-gap: 8px;
+        }
+
+        &_with-image-left {
+            text-align: left;
+            padding-left: 16px;
+        }
+    }
+
+    .br-button__icon {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        vertical-align: middle;
+    }
+
+    &.br-button_link {
+        border: 0;
+        padding: 0 !important;
+        height: auto !important;
+        background-color: palette.$br-color_transparent;
+        text-transform: none;
+
+        &:not(.br-button_disabled) {
+            &:hover,
+            &:focus {
+                border: 0;
+                background-color: palette.$br-color_transparent;
+
+                transition-duration: 0.2s;
+                transition-timing-function: ease;
+
+                .br-button__icon {
+                    color: var(--fdr-color_secondary-900);
+                }
+
+                .br-button__text {
+                    color: var(--fdr-color_secondary-900);
+                }
+            }
+
+            &:active {
+                border: 0;
+                background-color: palette.$br-color_transparent;
+
+                transition-duration: 0.2s;
+                transition-timing-function: ease;
+
+                .br-button__icon {
+                    color: var(--fdr-color_secondary-500);
+                }
+
+                .br-button__text {
+                    color: var(--fdr-color_secondary-500);
+                }
+            }
+        }
+
+        &.br-button_disabled {
+            &:hover,
+            &:focus {
+                .br-button__icon {
+                    color: inherit;
+                }
+
+                .br-button__text {
+                    color: inherit;
+                }
+            }
+
+            &:active {
+                .br-button__icon {
+                    color: inherit;
+                }
+
+                .br-button__text {
+                    color: inherit;
+                }
+            }
+        }
+    }
+
+}
