@@ -1,0 +1,65 @@
+@use 'br-padding' as br-padding;
+@use 'br-radius' as br-radius;
+@use 'palette/br-palette' as br-palette;
+
+$br-color_primary: #2674bc;
+
+.br-news{
+    overflow: hidden;
+
+    &_size {
+        &-small {
+            padding: 0.75 * br-padding.$br-base-padding 1 * br-padding.$br-base-padding;
+        }
+
+        &-medium {
+            padding: 1.5 * br-padding.$br-base-padding 2 * br-padding.$br-base-padding;;
+        }
+
+        &-large {
+            padding: 3 * br-padding.$br-base-padding 2 * br-padding.$br-base-padding;
+        }
+    }
+
+    @media screen and (min-width: 0px) and (max-width: 599.98px) {
+        padding: 1.5 * br-padding.$br-base-padding 1.5 * br-padding.$br-base-padding;
+    }
+
+    &_type {
+        &-info {
+            background-color: var(--fdr-color_primary-50);
+            border-left: 4px solid var(--fdr-color_primary-500);
+        }
+
+        &-success {
+            background-color: br-palette.$br-color_success-light;
+            border-left: 4px solid br-palette.$br-color_success;
+        }
+
+        &-waiting {
+            background-color: rgba(br-palette.$br-color_waiting, 0.2);
+            border-left: 4px solid br-palette.$br-color_waiting;
+        }
+
+        &-warning {
+            background-color: rgba(br-palette.$br-background-color_warning, 0.4);
+            border-left: 4px solid br-palette.$br-color_warning;
+        }
+
+        &-error {
+            background-color: br-palette.$br-color_danger-light;
+            border-left: 4px solid br-palette.$br-color_danger;
+        }
+
+    }
+
+    &_shape {
+        &-oval {
+            border-radius: br-radius.$br-radius-small;
+        }
+
+        &-rectangle {
+            border-radius: br-radius.$br-radius_square;
+        }
+    }
+}

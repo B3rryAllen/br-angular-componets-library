@@ -13,7 +13,7 @@
                     "builder": "@angular-devkit/build-angular:ng-packagr",
                     "options": {
                         "tsConfig": "projects/br-components/tsconfig.lib.json",
-                        "project": "projects/br-components/ng-package.json"
+                        "project": "projects/br-components/ng-package.json",
 
                     },
                     "configurations": {
@@ -70,7 +70,12 @@
                         "browserTarget": "br-components:build",
                         "compodoc": true,
                         "compodocArgs": ["-e", "json", "-d", "."],
-                        "outputDir": "dist/storybook/storybook-static"
+                        "outputDir": "dist/storybook/storybook-static",
+                        "stylePreprocessorOptions": {
+                            "includePaths": [
+                                "projects/br-components/src/styles"
+                            ]
+                        }
                     }
                 }
             }

@@ -1,6 +1,8 @@
 import { setCompodocJson } from "@storybook/addon-docs/angular";
 import docJson from "../dist/storybook/documentation.json";
 
+import "!style-loader!css-loader!sass-loader!../projects/br-components/src/styles/br-all.scss";
+
 setCompodocJson(docJson)
 
 export const parameters = {

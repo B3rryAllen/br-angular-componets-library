@@ -1,0 +1,16 @@
+<div
+    class="br-news"
+    [class.br]="theme === 'br'"
+    [class.ca]="theme === 'ca'"
+    [class.br-news_type-info]="newsType === 'Info'"
+    [class.br-news_type-warning]="newsType === 'Warning'"
+    [class.br-news_type-waiting]="newsType === 'Waiting'"
+    [class.br-news_type-success]="newsType === 'Success'"
+    [class.br-news_type-error]="newsType === 'Error'"
+    [class.br-news_size-small]="newsSize === 'Small'"
+    [class.br-news_size-medium]="newsSize === 'Medium'"
+    [class.br-news_size-large]="newsSize === 'Large'"
+    [class.br-news_shape-oval]="newsShape === 'Oval'"
+    [class.br-news_shape-rectangle]="newsShape === 'Rectangle'">
+    <ng-content></ng-content>
+</div>

@@ -18,16 +18,17 @@
     <div
         class="br-button__text"
         [class.br-button__text_with-column-gap]="!!this.contentCount">
-        <span class="br-button__icon" *ngIf="!!icon?.templateRef">
-            <ng-container [ngTemplateOutlet]="icon.templateRef"></ng-container>
+        <span class="br-button__icon">
+            <ng-container
+                *ngTemplateOutlet="icon?.templateRef ?? null"></ng-container>
         </span>
 
         <span *ngIf="label && label.length">{{ label }}</span>
 
         <br-badge
-            *ngIf="count !== undefined && count !== null"
+            *ngIf="count !== undefined"
             [count]="count"
-            [type]="buttonType === 'primary' ? 'primary' : 'secondary'"
+            [type]="buttonType === 'Primary' ? 'primary' : 'secondary'"
             size="small">
         </br-badge>
     </div>

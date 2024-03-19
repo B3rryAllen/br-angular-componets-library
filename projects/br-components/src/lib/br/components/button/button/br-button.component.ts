@@ -37,7 +37,7 @@ export class BrButtonComponent implements OnInit {
     public height: ButtonSize = ButtonSize.Medium;
 
     @ContentChild(BrIconComponent)
-    public icon: BrIconComponent | null = null;
+    public icon: BrIconComponent | undefined;
 
     @Output()
     public press = new EventEmitter<void>();

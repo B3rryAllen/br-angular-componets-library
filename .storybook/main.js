@@ -31,7 +31,6 @@ module.exports = {
             },
         );
 
-        console.log( JSON.stringify(config.module.rules) )
         return config;
     },
 }

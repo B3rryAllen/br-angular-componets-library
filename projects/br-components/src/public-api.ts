@@ -18,3 +18,6 @@ export * from './lib/br/br-lib.module';
 export * from './lib/br/br-lib.config';
 export * from './lib/br/br-lib.config.token';
 export * from './lib/br/theme';
+
+export * from './lib/br/components/news';
+export * from './lib/br/components/button';
