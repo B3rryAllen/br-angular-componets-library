@@ -1,11 +1,19 @@
 version: 2.1
+
 orbs:
   browser-tools: circleci/browser-tools@1.4.8
-jobs:
-  build:
-    working_directory: ~/br-angular-components-library
+  sonarcloud: sonarsource/sonarcloud@2.0.0
+
+executors: # Define an executor
+  br-executor:
     docker:
       - image: cimg/node:18.17.0-browsers
+
+jobs:
+
+  build:
+    working_directory: ~/br-angular-components-library
+    executor: br-executor
     steps:
       - checkout
       - run: yarn install
@@ -22,3 +30,18 @@ jobs:
           paths:
             - "node_modules"
       - run: yarn run test
+
+  sonarcloud_scan:
+    working_directory: ~/br-angular-components-library
+    executor: br-executor
+    steps:
+      - checkout
+      - sonarcloud/scan
+
+workflows:
+  build_and_test:
+    jobs:
+     - build
+     - sonarcloud_scan:
+        requires:
+          - build
