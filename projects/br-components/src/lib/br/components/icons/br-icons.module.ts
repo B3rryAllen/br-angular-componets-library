@@ -8,7 +8,7 @@ import { BrIconComponent } from './icon/br-icon.component';
 @NgModule({
     declarations: [BrIconComponent],
     exports: [BrIconComponent],
-    imports: [CommonModule, AngularSvgIconModule, HttpClientModule],
+    imports: [AngularSvgIconModule, CommonModule, HttpClientModule],
     providers: [brIconProvider],
 })
 export class BrIconsModule {}

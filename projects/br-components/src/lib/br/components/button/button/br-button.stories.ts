@@ -45,7 +45,7 @@ export default {
             imports: [BrButtonModule, BrIconsModule, AngularSvgIconModule],
         }),
     ],
-    title: 'Components / Button',
+    title: 'Components / Buttons / Button',
 };
 
 type InputArgs = {

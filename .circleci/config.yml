@@ -30,12 +30,18 @@ jobs:
           paths:
             - "node_modules"
       - run: yarn run test
+      - save_cache:
+         key: br-angular-components-library-coverage-{{ .Branch }}-{{ checksum "package.json" }}
+         paths:
+           - "coverage"
 
   sonarcloud_scan:
     working_directory: ~/br-angular-components-library
     executor: br-executor
     steps:
       - checkout
+      - restore_cache:
+            key: br-angular-components-library-coverage-{{ .Branch }}-{{ checksum "package.json" }}
       - sonarcloud/scan
 
 workflows:

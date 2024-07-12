@@ -59,7 +59,7 @@ export default {
             imports: [BrButtonModule, BrIconsModule, AngularSvgIconModule],
         }),
     ],
-    title: 'Components / Button Ca Theme',
+    title: 'Components / Buttons / Button Ca Theme',
 };
 
 type InputArgs = {

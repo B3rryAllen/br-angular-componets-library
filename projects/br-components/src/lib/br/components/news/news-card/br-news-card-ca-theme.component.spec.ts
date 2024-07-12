@@ -8,8 +8,6 @@ import { BrNewsModule } from '../br-news.module';
 import { BrNewsCardComponent } from './br-news-card.component';
 
 describe('BrNewsComponent', () => {
-    const label = 'Test Button';
-
     let component: BrNewsCardComponent;
     let fixture: ComponentFixture<BrNewsCardComponent>;
 

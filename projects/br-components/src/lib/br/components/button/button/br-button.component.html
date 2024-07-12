@@ -18,7 +18,7 @@
     <div
         class="br-button__text"
         [class.br-button__text_with-column-gap]="!!this.contentCount">
-        <span class="br-button__icon">
+        <span class="br-button__icon" *ngIf="icon">
             <ng-container
                 *ngTemplateOutlet="icon?.templateRef ?? null"></ng-container>
         </span>

@@ -6,6 +6,7 @@ import { BR_LIB_CONFIG } from './br-lib.config.token';
 import { BrAccordionModule } from './components/accordion/br-accordion.module';
 import { BrBadgeModule } from './components/badge/br-badge.module';
 import { BrIconsModule } from './components/icons/br-icons.module';
+import { BrScrollerModule } from './components/scroller';
 
 @NgModule({
     imports: [
@@ -13,6 +14,7 @@ import { BrIconsModule } from './components/icons/br-icons.module';
         BrBadgeModule,
         BrIconsModule,
         BrowserAnimationsModule,
+        BrScrollerModule,
         CommonModule,
     ],
 })

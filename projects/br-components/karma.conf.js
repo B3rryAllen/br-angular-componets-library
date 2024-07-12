@@ -28,10 +28,9 @@ module.exports = function (config) {
         coverageReporter: {
             dir: require('path').join(
                 __dirname,
-                '../../coverage/br-lib-components',
-            ),
+                '../../coverage/br-lib-components'),
             subdir: '.',
-            reporters: [{ type: 'html' }, { type: 'text-summary' }],
+            reporters: [{ type: 'html' }, { type: 'text-summary' }, {type: 'cobertura'}, { type: 'lcov' }],
         },
         reporters: ['mocha'],
 

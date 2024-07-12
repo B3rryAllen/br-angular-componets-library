@@ -1,0 +1,20 @@
+<div class="br-vertical-scroller">
+    <div
+        #scrollableDiv
+        class="br-vertical-scroller__content"
+        [attr.tabindex]="tabIndex"
+        [style]="style"
+        (scroll)="onScroll()">
+        <div
+            class="br-vertical-scroller__content__top"
+            [class.br-vertical-scroller__content__top-hidden]="
+                isTopGradientHidden()
+            "></div>
+        <ng-content></ng-content>
+        <div
+            class="br-vertical-scroller__content__bottom"
+            [class.br-vertical-scroller__content__bottom-hidden]="
+                isBottomGradientHidden()
+            "></div>
+    </div>
+</div>

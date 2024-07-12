@@ -3,12 +3,12 @@
     "compilerOptions": {
         "baseUrl": "./src",
         "outDir": "../../out-tsc/lib",
-        "target": "es2015",
+        "target": "ES2022",
         "declaration": true,
         "declarationMap": true,
         "inlineSources": true,
         "types": [],
-        "lib": ["dom", "es2018"],
+        "lib": ["dom", "ES2022"],
         "paths": {
             "*": ["*"]
         }

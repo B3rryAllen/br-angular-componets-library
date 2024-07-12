@@ -1,0 +1,19 @@
+<div class="br-horizontal-scroller" [style]="style">
+    <div
+        #scrollableDiv
+        class="br-horizontal-scroller__content"
+        [attr.tabindex]="tabIndex"
+        (scroll)="onScroll()">
+        <div
+            class="br-horizontal-scroller__content__left"
+            [class.br-horizontal-scroller__content__left-hidden]="
+                isLeftGradientHidden()
+            "></div>
+        <ng-content></ng-content>
+        <div
+            class="br-horizontal-scroller__content__right"
+            [class.br-horizontal-scroller__content__right-hidden]="
+                isRightGradientHidden()
+            "></div>
+    </div>
+</div>

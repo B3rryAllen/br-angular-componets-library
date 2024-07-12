@@ -1,6 +1,6 @@
 defaults
-Chrome >=61
-Firefox >=63
-Edge >=79
-Safari >=13
-iOS >=13
+last 6 Chrome versions
+last 1 Firefox version
+last 3 Edge major versions
+last 3 Safari major versions
+last 6 iOS major versions

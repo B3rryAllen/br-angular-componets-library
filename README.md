@@ -1,3 +1,5 @@
+[![Buratta Inc](https://circleci.com/bb/burattainc/br-angular-components-library.svg?style=svg&circle-token=CCIPRJ_QN7tZRBd2Rj6boVjGeBcsw_f5f551711fb9ef4dc8cef3290f7e7a6ce84d9fb8)](https://app.circleci.com/pipelines/bitbucket/burattainc/br-angular-components-library)
+
 # BrAngularComponentsLibraryExperimental
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.5.

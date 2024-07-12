@@ -4129,6 +4129,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@storybook/addon-a11y@npm:^7.6.17":
+  version: 7.6.17
+  resolution: "@storybook/addon-a11y@npm:7.6.17"
+  dependencies:
+    "@storybook/addon-highlight": 7.6.17
+    axe-core: ^4.2.0
+  checksum: fc7b8dbf00ff1c7a498491ae9c6192d74091fb06e76e6a598baec8ab1f6c754d39d3fde85f67f286bbc512a849a87d01d835c166eeac3aebee2ba9bfe1726a3e
+  languageName: node
+  linkType: hard
+
 "@storybook/addon-actions@npm:7.5.3, @storybook/addon-actions@npm:^7.5.3":
   version: 7.5.3
   resolution: "@storybook/addon-actions@npm:7.5.3"
@@ -4278,6 +4288,15 @@ __metadata:
     "@storybook/global": ^5.0.0
     "@storybook/preview-api": 7.5.3
   checksum: be468def9a6c3495e72f2c0a15e132b519e909c42e58361fd8d55c1fb1b7764e86b9e0a6531ba0f61b227d9d2ed5646ad294db0729177a39e3da5a7e00a3f2f0
+  languageName: node
+  linkType: hard
+
+"@storybook/addon-highlight@npm:7.6.17":
+  version: 7.6.17
+  resolution: "@storybook/addon-highlight@npm:7.6.17"
+  dependencies:
+    "@storybook/global": ^5.0.0
+  checksum: 0b5f5dae9aae48b9386b167b4941f7b790a9e2502c352f21b1e114379cda7f4897f0e61babe9967fb258c551004cade1a0cbeddbc2e917c6a18b65617b503b09
   languageName: node
   linkType: hard
 
@@ -7007,6 +7026,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"axe-core@npm:^4.2.0":
+  version: 4.9.0
+  resolution: "axe-core@npm:4.9.0"
+  checksum: cabaa07586a92510f4befc742744b548c30033dfda99dd439c21d736f51913d52022c8836180084b13f2098f06a01c716dc42d8e91599c43c9db25905ba5403f
+  languageName: node
+  linkType: hard
+
 "axios@npm:^1.0.0":
   version: 1.6.1
   resolution: "axios@npm:1.6.1"
@@ -7335,6 +7361,7 @@ __metadata:
     "@angular/router": ~16.2.12
     "@babel/core": ^7.23.3
     "@compodoc/compodoc": ^1.1.18
+    "@storybook/addon-a11y": ^7.6.17
     "@storybook/addon-actions": ^7.5.3
     "@storybook/addon-docs": ^7.5.3
     "@storybook/addon-essentials": ^7.5.3

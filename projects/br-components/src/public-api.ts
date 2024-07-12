@@ -1,7 +1,6 @@
 /*
  * Public API Surface of br-lib-components
  */
-export * from './lib/br/components/button';
 export * from './lib/br/components/accordion/accordion/br-accordion/br-accordion.component';
 export * from './lib/br/components/accordion/br-accordion.module';
 export * from './lib/br/components/badge/badge/br-badge.component';
@@ -19,5 +18,6 @@ export * from './lib/br/br-lib.config';
 export * from './lib/br/br-lib.config.token';
 export * from './lib/br/theme';
 
-export * from './lib/br/components/news';
 export * from './lib/br/components/button';
+export * from './lib/br/components/news';
+export * from './lib/br/components/scroller';

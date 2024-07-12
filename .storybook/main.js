@@ -7,6 +7,8 @@ module.exports = {
         '@storybook/addon-links',
         '@storybook/addon-essentials',
         '@storybook/addon-viewport',
+        '@storybook/addon-a11y',
+        '@storybook/icons',
         'storybook-mobile',
     ],
 
@@ -22,7 +24,7 @@ module.exports = {
         autodocs: true,
     },
 
-    async webpackFinal(config, { configType }) {
+    async webpackFinal(config) {
         config.module.rules.push(
             {
                 test: /\.scss$/,

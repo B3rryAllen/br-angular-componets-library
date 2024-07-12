@@ -62,6 +62,13 @@ describe('BrButtonComponent', () => {
         expect(buttonElement.classes['br-button_primary']).toBeTruthy();
     });
 
+    it("shouldn't contains icon", () => {
+        const buttonIcontag = fixture.debugElement.query(
+            By.css('.br-button__icon')
+        );
+        expect(buttonIcontag).toBeFalsy();
+    });
+
     it('should have br-button_secondary class when type is secondary', () => {
         component.buttonType = 'Secondary';
         fixture.detectChanges();
