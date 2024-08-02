@@ -1,7 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BrButtonComponent } from './br-button.component';
-import { BrLibModule } from '../../../br-lib.module';
 import { BrButtonModule } from '../br-button.module';
 
 describe('BrButtonComponent Exception during creation', () => {
@@ -9,7 +8,7 @@ describe('BrButtonComponent Exception during creation', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            imports: [BrLibModule.forRoot(), BrButtonModule],
+            imports: [BrButtonModule],
         }).compileComponents();
     });
 

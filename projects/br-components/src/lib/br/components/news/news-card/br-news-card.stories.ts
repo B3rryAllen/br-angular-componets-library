@@ -45,24 +45,25 @@ export const Default: NewsGroupStory = (args: InputArgs) => ({
     props: {
         ...args,
     },
-    template: `
-            <br-news [newsType]="newsType"
-                     [newsSize]="newsSize"
-                     [newsShape]="newsShape"
-            >I'm a news</br-news>`,
+    template: `<br-news>I'm a news</br-news>`,
 });
 
-Default.args = {
-    newsType: NewsType.Info,
-    newsSize: NewsSize.Medium,
-    newsShape: NewsShape.Oval,
-};
+export const DefaultCaTheme: NewsGroupStory = (args: InputArgs) => ({
+    props: {
+        ...args,
+    },
+    template: `<div class="ca"><br-news>I'm a news</br-news></div>`,
+});
 
 export const Basic: NewsGroupStory = (args: InputArgs) => ({
     props: {
         ...args,
     },
-    template: `<br-news>I'm a news</br-news>`,
+    template: `
+                <br-news [newsType]="newsType"
+                         [newsSize]="newsSize"
+                         [newsShape]="newsShape"
+                >I'm a news</br-news>`,
 });
 
 Basic.args = {

@@ -2,43 +2,55 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 
 import { BrButtonComponent } from './br-button.component';
-import { BrLibModule } from '../../../br-lib.module';
 import { BrButtonModule } from '../br-button.module';
-import { BR_LIB_CONFIG } from '../../../br-lib.config.token';
-import { Theme } from '../../../theme';
+import { Component, DebugElement, Input } from '@angular/core';
 
-describe('BrButtonComponent', () => {
+@Component({
+    template: `
+        <div class="ca">
+            <br-button label="label"></br-button>
+        </div>
+    `,
+})
+class TestHostComponent {
+    @Input({ required: true })
+    public label!: string;
+}
+
+describe('BrButtonComponent with CA Theme', () => {
     const label = 'Test Button';
 
-    let component: BrButtonComponent;
-    let fixture: ComponentFixture<BrButtonComponent>;
+    let hostFixture: ComponentFixture<TestHostComponent>;
+    let hostComponent: TestHostComponent;
+
+    let brButtonFixture: DebugElement;
+    let brButtonComponent: BrButtonComponent;
 
     beforeEach(() => {
         TestBed.configureTestingModule({
-            imports: [BrLibModule.forRoot(), BrButtonModule],
-            providers: [
-                {
-                    provide: BR_LIB_CONFIG,
-                    useValue: { theme: Theme.ca },
-                },
-            ],
+            imports: [BrButtonModule],
+            declarations: [TestHostComponent],
         }).compileComponents();
     });
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(BrButtonComponent);
-        component = fixture.componentInstance;
-        component.label = label;
-        fixture.detectChanges();
+        hostFixture = TestBed.createComponent(TestHostComponent);
+        hostComponent = hostFixture.componentInstance;
+        hostComponent.label = label;
+
+        brButtonFixture = hostFixture.debugElement.query(By.css('.br-button'));
+        brButtonComponent = brButtonFixture.componentInstance;
+
+        hostFixture.detectChanges();
     });
 
     it('should create', () => {
-        expect(component).toBeTruthy();
+        expect(brButtonComponent).toBeTruthy();
     });
 
-    it('should hava class ca', () => {
-        const el = fixture.debugElement.query(By.css('.br-button'));
-        expect(el).toBeTruthy();
-        expect(el.nativeElement.classList).toContain('ca');
+    it('should hava color of ca theme', () => {
+        const newsStyles = getComputedStyle(brButtonFixture.nativeElement);
+
+        expect(newsStyles.backgroundColor).toEqual('rgb(0, 77, 54)');
     });
 });

@@ -1,41 +1,49 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { BrNewsModule } from '../br-news.module';
+import { Component, DebugElement } from '@angular/core';
+import { BrNewsCardComponent } from './br-news-card.component';
 import { By } from '@angular/platform-browser';
 
-import { BrLibModule } from '../../../br-lib.module';
-import { BR_LIB_CONFIG } from '../../../br-lib.config.token';
-import { Theme } from '../../../theme';
-import { BrNewsModule } from '../br-news.module';
-import { BrNewsCardComponent } from './br-news-card.component';
+@Component({
+    template: `
+        <div class="ca">
+            <br-news>Test News</br-news>
+        </div>
+    `,
+})
+class TestHostComponent {}
 
-describe('BrNewsComponent', () => {
-    let component: BrNewsCardComponent;
-    let fixture: ComponentFixture<BrNewsCardComponent>;
+describe('BrNewsComponent with CA Theme', () => {
+    const newsBaseClass = '.br-news';
+
+    let hostFixture: ComponentFixture<TestHostComponent>;
+
+    let brNewsFixture: DebugElement;
+    let brNewsComponent: BrNewsCardComponent;
 
     beforeEach(() => {
         TestBed.configureTestingModule({
-            imports: [BrLibModule.forRoot(), BrNewsModule],
-            providers: [
-                {
-                    provide: BR_LIB_CONFIG,
-                    useValue: { theme: Theme.ca },
-                },
-            ],
+            imports: [BrNewsModule],
+            declarations: [TestHostComponent],
         }).compileComponents();
     });
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(BrNewsCardComponent);
-        component = fixture.componentInstance;
-        fixture.detectChanges();
+        hostFixture = TestBed.createComponent(TestHostComponent);
+        brNewsFixture = hostFixture.debugElement.query(By.css(newsBaseClass));
+        brNewsComponent = brNewsFixture.componentInstance;
+
+        hostFixture.detectChanges();
     });
 
     it('should create', () => {
-        expect(component).toBeTruthy();
+        expect(brNewsComponent).toBeTruthy();
     });
 
-    it('should hava class ca', () => {
-        const el = fixture.debugElement.query(By.css('.br-news'));
-        expect(el).toBeTruthy();
-        expect(el.nativeElement.classList).toContain('ca');
+    it('should hava color of ca theme', () => {
+        const newsStyles = getComputedStyle(brNewsFixture.nativeElement);
+
+        expect(newsStyles.backgroundColor).toEqual('rgb(181, 239, 240)');
+        expect(newsStyles.borderLeftColor).toEqual('rgb(18, 142, 146)');
     });
 });

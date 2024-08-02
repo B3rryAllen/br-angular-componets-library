@@ -2,7 +2,6 @@ import {
     Component,
     ContentChild,
     EventEmitter,
-    Inject,
     Input,
     OnInit,
     Output,
@@ -12,8 +11,6 @@ import { ButtonType } from '../models/button-type';
 import { BrIconComponent } from '../../icons/icon/br-icon.component';
 import { ButtonSize } from '../models/button-size';
 import { ButtonWidth } from '../models/button-width';
-import { Theme } from '../../../theme';
-import { BR_LIB_CONFIG } from '../../../br-lib.config.token';
 
 @Component({
     selector: 'br-button',
@@ -46,14 +43,6 @@ export class BrButtonComponent implements OnInit {
     width: ButtonWidth = ButtonWidth.Auto;
 
     contentCount = 1;
-
-    theme: Theme;
-
-    constructor(
-        @Inject(BR_LIB_CONFIG) private brLibConfig = { theme: Theme.br }
-    ) {
-        this.theme = brLibConfig.theme;
-    }
 
     ngOnInit(): void {
         if (!this.label?.length) {

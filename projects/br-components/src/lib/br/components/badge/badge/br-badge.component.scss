@@ -62,16 +62,16 @@
         &.br-badge_size {
             &_medium {
                 .br-badge__content {
-                    line-height: 23px;
+                    line-height: 20px;
                 }
             }
 
             &_small {
                 min-width: 8px;
-                height: 12px;
+                height: 14px;
 
                 .br-badge__content {
-                    line-height: 12px;
+                    line-height: 10px;
                 }
             }
         }

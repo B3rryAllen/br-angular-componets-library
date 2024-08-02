@@ -2,8 +2,9 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 
 import { BrButtonComponent } from './br-button.component';
-import { BrLibModule } from '../../../br-lib.module';
 import { BrButtonModule } from '../br-button.module';
+import { HttpClientModule } from '@angular/common/http';
+import { AngularSvgIconModule } from 'angular-svg-icon';
 
 describe('BrButtonComponent', () => {
     const buttonBaseClass = '.br-button';
@@ -15,7 +16,11 @@ describe('BrButtonComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            imports: [BrLibModule.forRoot(), BrButtonModule],
+            imports: [
+                HttpClientModule,
+                AngularSvgIconModule.forRoot(),
+                BrButtonModule,
+            ],
         }).compileComponents();
     });
 
@@ -37,12 +42,14 @@ describe('BrButtonComponent', () => {
         }).not.toThrowError();
     });
 
-    it('should hava class br', () => {
+    it('should have theme as br', () => {
         const buttonElement = fixture.debugElement.query(
             By.css(buttonBaseClass)
-        );
-        expect(buttonElement).toBeTruthy();
-        expect(buttonElement.nativeElement.classList).toContain('br');
+        ).nativeElement;
+
+        const newsStyles = getComputedStyle(buttonElement);
+
+        expect(newsStyles.backgroundColor).toEqual('rgb(50, 0, 105)');
     });
 
     it('should display label when provided', () => {

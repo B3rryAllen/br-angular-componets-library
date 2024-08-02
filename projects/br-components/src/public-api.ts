@@ -14,8 +14,6 @@ export * from './lib/br/icons/arrow-left_cc.svg';
 export * from './lib/br/icons/chevron-down_cc.svg';
 export * from './lib/br/components/icons/icon/br-icon.component';
 export * from './lib/br/br-lib.module';
-export * from './lib/br/br-lib.config';
-export * from './lib/br/br-lib.config.token';
 export * from './lib/br/theme';
 
 export * from './lib/br/components/button';

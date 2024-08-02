@@ -1,40 +1,43 @@
-@use '../../../../../../styles/br-all.scss';
+@use 'br-padding' as br-padding;
+@use 'br-radius' as br-radius;
+@use 'typography/br-t-heading' as br-t-heading;
+@use 'palette/br-palette' as br-palette;
 
 .br-accordion {
     .panel-group {
         margin-bottom: 0;
 
         .panel {
-            background-color: rgba(br-all.$fdr-color_tertiary-100, 0.4);
-            border-radius: br-all.$br-radius_small;
+            background-color: rgba(br-palette.$fdr-color_tertiary-100, 0.4);
+            border-radius: br-radius.$br-radius_small;
             border: 0;
             box-shadow: none;
         }
 
         .panel-collapse {
-            background-color: rgba(br-all.$fdr-color_tertiary-100, 0.4);
-            border-bottom-left-radius: br-all.$br-radius_small;
-            border-bottom-right-radius: br-all.$br-radius_small;
+            background-color: rgba(br-palette.$fdr-color_tertiary-100, 0.4);
+            border-bottom-left-radius: br-radius.$br-radius_small;
+            border-bottom-right-radius: br-radius.$br-radius_small;
         }
 
         .panel-heading {
             padding: 16px;
-            border-radius: br-all.$br-radius_small;
+            border-radius: br-radius.$br-radius_small;
             border-bottom: none;
         }
 
         .panel-body {
-            border-bottom-left-radius: br-all.$br-radius_small;
-            border-bottom-right-radius: br-all.$br-radius_small;
+            border-bottom-left-radius: br-radius.$br-radius_small;
+            border-bottom-right-radius: br-radius.$br-radius_small;
         }
 
         .panel-heading + .panel-collapse {
-            border-top: 1px solid br-all.$fdr-color_tertiary-100;
+            border-top: 1px solid br-palette.$fdr-color_tertiary-100;
             transition: border-top 0.3s ease;
         }
 
         .panel-heading + .panel-collapse.show {
-            border-top: 1px solid br-all.$fdr-color_tertiary-200;
+            border-top: 1px solid br-palette.$fdr-color_tertiary-200;
         }
 
         .panel-heading + .panel-collapse > .panel-body {
@@ -43,14 +46,14 @@
         }
 
         .panel-default > .panel-heading {
-            background-color: rgba(br-all.$fdr-color_tertiary-100, 0.4);
+            background-color: rgba(br-palette.$fdr-color_tertiary-100, 0.4);
         }
     }
 
     &_white {
         .panel-group {
             .panel-body {
-                background-color: br-all.$fd-color_white;
+                background-color: br-palette.$fd-color_white;
             }
 
             .panel-heading + .panel-collapse {
@@ -64,7 +67,7 @@
     }
 
     &__head {
-        @include br-all.fd-t-heading(7);
+        @include br-t-heading.fd-t-heading(7);
         color: var(--fdr-color_secondary-900);
         font-weight: 600;
         display: flex;

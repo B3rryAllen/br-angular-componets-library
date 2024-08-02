@@ -1,14 +1,12 @@
 import {
     Component,
     EventEmitter,
-    Inject,
     Input,
     Output,
     ViewEncapsulation,
 } from '@angular/core';
 import { setTheme } from 'ngx-bootstrap/utils';
-import { BR_LIB_CONFIG } from '../../../../br-lib.config.token';
-import { Theme } from '../../../../theme';
+
 @Component({
     selector: 'br-accordion',
     templateUrl: './br-accordion.component.html',
@@ -28,13 +26,8 @@ export class BrAccordionComponent {
     @Output()
     isOpenChange = new EventEmitter<boolean>();
 
-    theme: Theme;
-
-    constructor(
-        @Inject(BR_LIB_CONFIG) private brLibConfig = { theme: Theme.br }
-    ) {
-        this.theme = brLibConfig.theme;
-        setTheme('bs4');
+    constructor() {
+        setTheme('bs5');
     }
 
     isOpenChangeHandler($event: boolean) {

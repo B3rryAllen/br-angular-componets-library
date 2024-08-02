@@ -2,9 +2,8 @@
 @use 'br-radius' as br-radius;
 @use 'palette/br-palette' as br-palette;
 
-$br-color_primary: #2674bc;
-
 .br-news{
+
     overflow: hidden;
 
     &_size {
@@ -13,7 +12,7 @@ $br-color_primary: #2674bc;
         }
 
         &-medium {
-            padding: 1.5 * br-padding.$br-base-padding 2 * br-padding.$br-base-padding;;
+            padding: 1.5 * br-padding.$br-base-padding 2 * br-padding.$br-base-padding;
         }
 
         &-large {

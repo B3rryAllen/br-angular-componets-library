@@ -1,11 +1,9 @@
-import { applicationConfig, moduleMetadata } from '@storybook/angular';
-import { BrLibModule } from '../../../br-lib.module';
+import { moduleMetadata } from '@storybook/angular';
 import { BrBadgeModule } from '../br-badge.module';
 import { BadgeBorder } from '../models/badge-border';
 import { BadgeSize } from '../models/badge-size';
 import { BadgeType } from '../models/badge-type';
 import { BrBadgeComponent } from './br-badge.component';
-import { importProvidersFrom } from '@angular/core';
 
 export default {
     argTypes: {
@@ -30,9 +28,6 @@ export default {
     },
     component: BrBadgeComponent,
     decorators: [
-        applicationConfig({
-            providers: [importProvidersFrom([BrLibModule.forRoot()])],
-        }),
         moduleMetadata({
             imports: [BrBadgeModule],
         }),
@@ -49,6 +44,17 @@ type InputArgs = {
 
 type BadgeGroupStory = ((args: InputArgs) => unknown) & { args?: InputArgs };
 
+export const Default: BadgeGroupStory = (args: InputArgs) => ({
+    props: {
+        ...args,
+    },
+    template: `<br-badge [count]="count"></br-badge>`,
+});
+
+Default.args = {
+    count: 1,
+};
+
 export const Basic: BadgeGroupStory = (args: InputArgs) => ({
     props: {
         ...args,
@@ -62,25 +68,40 @@ Basic.args = {
     type: 'default',
 };
 
-export const Default: BadgeGroupStory = (args: InputArgs) => ({
+export const BasicCaTheme: BadgeGroupStory = (args: InputArgs) => ({
     props: {
         ...args,
     },
-    template: `<br-badge [count]="count"></br-badge>`,
+    template: `<div class="ca"><br-badge [count]="count" [type]="type" [size]="size"></br-badge></div>`,
 });
 
-Default.args = {
+BasicCaTheme.args = {
     count: 1,
+    size: 'medium',
+    type: 'default',
 };
 
 export const Primary: BadgeGroupStory = (args: InputArgs) => ({
     props: {
         ...args,
     },
-    template: `<div class="fd"><br-badge [count]="count" [type]="type" [size]="size"></br-badge></div>`,
+    template: `<br-badge [count]="count" [type]="type" [size]="size"></br-badge>`,
 });
 
 Primary.args = {
+    count: 1,
+    size: 'medium',
+    type: 'primary',
+};
+
+export const PrimaryCaTheme: BadgeGroupStory = (args: InputArgs) => ({
+    props: {
+        ...args,
+    },
+    template: `<div class="ca"><br-badge [count]="count" [type]="type" [size]="size"></br-badge></div>`,
+});
+
+PrimaryCaTheme.args = {
     count: 1,
     size: 'medium',
     type: 'primary',
@@ -94,6 +115,19 @@ export const Secondary: BadgeGroupStory = (args: InputArgs) => ({
 });
 
 Secondary.args = {
+    count: 1,
+    size: 'medium',
+    type: 'secondary',
+};
+
+export const SecondaryCaTheme: BadgeGroupStory = (args: InputArgs) => ({
+    props: {
+        ...args,
+    },
+    template: `<div class="ca"><br-badge [count]="count" [type]="type" [size]="size"></br-badge></div>`,
+});
+
+SecondaryCaTheme.args = {
     count: 1,
     size: 'medium',
     type: 'secondary',

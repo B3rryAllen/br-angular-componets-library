@@ -1,6 +1,5 @@
 import { applicationConfig, moduleMetadata } from '@storybook/angular';
 import { importProvidersFrom } from '@angular/core';
-import { BrLibModule } from '../../../br-lib.module';
 import { BrButtonComponent } from './br-button.component';
 import { BrButtonModule } from '../br-button.module';
 import { BrIconsModule } from '../../icons/br-icons.module';
@@ -16,6 +15,7 @@ export default {
         },
         label: {
             type: 'string',
+            description: 'Button label',
         },
         type: {
             type: 'radio',
@@ -35,7 +35,6 @@ export default {
         applicationConfig({
             providers: [
                 importProvidersFrom([
-                    BrLibModule.forRoot(),
                     AngularSvgIconModule.forRoot(),
                     BrIconsModule,
                 ]),
@@ -57,26 +56,6 @@ type InputArgs = {
 };
 
 type ButtonStory = ((args: InputArgs) => unknown) & { args?: InputArgs };
-
-export const Default: ButtonStory = (args: InputArgs) => ({
-    props: {
-        ...args,
-    },
-    template: `<br-button
-                  [label]="label"
-                  [count]="count"
-                  [buttonType]="type"
-                  [height]="height"
-                  [width]="width"></br-button>`,
-});
-
-Default.args = {
-    label: "I'm a button",
-    count: 1,
-    type: ButtonType.Primary,
-    height: ButtonSize.Medium,
-    width: ButtonWidth.Auto,
-};
 
 export const Basic: ButtonStory = (args: InputArgs) => ({
     props: {
@@ -183,6 +162,18 @@ export const WidthFull: ButtonStory = (args: InputArgs) => ({
 WidthFull.args = {
     label: "I'm a full button",
     width: ButtonWidth.Full,
+};
+
+export const WidthAuto: ButtonStory = (args: InputArgs) => ({
+    props: {
+        ...args,
+    },
+    template: `<br-button [label]="label" [width]="width"></br-button>`,
+});
+
+WidthAuto.args = {
+    label: "I'm a full button",
+    width: ButtonWidth.Auto,
 };
 
 export const PrimaryWithCount: ButtonStory = (args: InputArgs) => ({

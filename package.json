@@ -1,4 +1,4 @@
-{
+    {
     "name": "br-angular-components-library",
     "packageManager": "yarn@3.2.0",
     "private": true,

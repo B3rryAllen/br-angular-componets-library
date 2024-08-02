@@ -72,31 +72,11 @@ type InputArgs = {
 
 type ButtonStory = ((args: InputArgs) => unknown) & { args?: InputArgs };
 
-export const CaDefault: ButtonStory = (args: InputArgs) => ({
-    props: {
-        ...args,
-    },
-    template: `<br-button
-                  [label]="label"
-                  [count]="count"
-                  [buttonType]="type"
-                  [height]="height"
-                  [width]="width"></br-button>`,
-});
-
-CaDefault.args = {
-    label: "I'm a button",
-    count: 1,
-    type: ButtonType.Primary,
-    height: ButtonSize.Medium,
-    width: ButtonWidth.Auto,
-};
-
 export const CaBasic: ButtonStory = (args: InputArgs) => ({
     props: {
         ...args,
     },
-    template: `<br-button [label]="label"></br-button>`,
+    template: `<div class="ca"><br-button [label]="label"></br-button></div>`,
 });
 
 CaBasic.args = {
@@ -107,7 +87,7 @@ export const CaTypeSecondary: ButtonStory = (args: InputArgs) => ({
     props: {
         ...args,
     },
-    template: `<br-button [label]="label" [buttonType]="type"></br-button>`,
+    template: `<div class="ca"><br-button [label]="label" [buttonType]="type"></br-button></div>`,
 });
 
 CaTypeSecondary.args = {
@@ -119,7 +99,7 @@ export const CaTypeTransparent: ButtonStory = (args: InputArgs) => ({
     props: {
         ...args,
     },
-    template: `<br-button [label]="label" [buttonType]="type"></br-button>`,
+    template: `<div class="ca"><br-button [label]="label" [buttonType]="type"></br-button></div>`,
 });
 
 CaTypeTransparent.args = {
@@ -131,7 +111,7 @@ export const CaTypeLink: ButtonStory = (args: InputArgs) => ({
     props: {
         ...args,
     },
-    template: `<br-button [label]="label" [buttonType]="type"></br-button>`,
+    template: `<div class="ca"><br-button [label]="label" [buttonType]="type"></br-button></div>`,
 });
 
 CaTypeLink.args = {
@@ -143,7 +123,7 @@ export const CaHeightLarge: ButtonStory = (args: InputArgs) => ({
     props: {
         ...args,
     },
-    template: `<br-button [label]="label" [height]="height"></br-button>`,
+    template: `<div class="ca"><br-button [label]="label" [height]="height"></br-button></div>`,
 });
 
 CaHeightLarge.args = {
@@ -155,7 +135,7 @@ export const CaHeightMedium: ButtonStory = (args: InputArgs) => ({
     props: {
         ...args,
     },
-    template: `<br-button [label]="label" [height]="height"></br-button>`,
+    template: `<div class="ca"><br-button [label]="label" [height]="height"></br-button></div>`,
 });
 
 CaHeightMedium.args = {
@@ -167,7 +147,7 @@ export const CaHeightSmall: ButtonStory = (args: InputArgs) => ({
     props: {
         ...args,
     },
-    template: `<br-button [label]="label" [height]="height"></br-button>`,
+    template: `<div class="ca"><br-button [label]="label" [height]="height"></br-button></div>`,
 });
 
 CaHeightSmall.args = {
@@ -179,7 +159,7 @@ export const CaHeightMicro: ButtonStory = (args: InputArgs) => ({
     props: {
         ...args,
     },
-    template: `<br-button [label]="label" [height]="height"></br-button>`,
+    template: `<div class="ca"><br-button [label]="label" [height]="height"></br-button></div>`,
 });
 
 CaHeightMicro.args = {
@@ -191,7 +171,7 @@ export const CaWidthFull: ButtonStory = (args: InputArgs) => ({
     props: {
         ...args,
     },
-    template: `<br-button [label]="label" [width]="width"></br-button>`,
+    template: `<div class="ca"><br-button [label]="label" [width]="width"></br-button></div>`,
 });
 
 CaWidthFull.args = {
@@ -199,8 +179,20 @@ CaWidthFull.args = {
     width: ButtonWidth.Full,
 };
 
+export const CaWidthAuto: ButtonStory = (args: InputArgs) => ({
+    props: {
+        ...args,
+    },
+    template: `<div class="ca"><br-button [label]="label" [width]="width"></br-button></div>`,
+});
+
+CaWidthAuto.args = {
+    label: "I'm a full button",
+    width: ButtonWidth.Auto,
+};
+
 export const CaPrimaryWithCount: ButtonStory = (args: InputArgs) => ({
-    component: BrButtonComponent,
+    template: `<div class="ca"><br-button [label]="label" [count]="count"></br-button></div>`,
     props: {
         ...args,
     },
@@ -212,9 +204,9 @@ CaPrimaryWithCount.args = {
 };
 
 export const CaPrimaryWithIcon: ButtonStory = (args: InputArgs) => ({
-    template: `<br-button [label]="label">
+    template: `<div class="ca"><br-button [label]="label">
           <br-icon name="chevronDown"></br-icon>
-        </br-button>`,
+        </br-button></div>`,
     props: {
         ...args,
     },

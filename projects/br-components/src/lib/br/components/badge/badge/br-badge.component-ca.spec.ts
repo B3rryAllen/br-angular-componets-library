@@ -1,33 +1,80 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { BR_LIB_CONFIG } from '../../../br-lib.config.token';
-import { Theme } from '../../../theme';
-import { BrBadgeModule } from '../br-badge.module';
 import { BrBadgeComponent } from './br-badge.component';
+import { Component, DebugElement, Input } from '@angular/core';
+import { BrBadgeModule } from '../br-badge.module';
+import { BadgeType } from '../models/badge-type';
 
-describe('BrBadgeComponent', () => {
-    let fixture: ComponentFixture<BrBadgeComponent>;
+@Component({
+    template: `
+        <div class="ca">
+            <br-badge [count]="1" [type]="type"></br-badge>
+        </div>
+    `,
+})
+class TestHostComponent {
+    @Input()
+    type: BadgeType = 'default';
+}
 
-    beforeEach(async () => {
-        await TestBed.configureTestingModule({
+describe('BrBadgeComponent CA Theme', () => {
+    const badgeBaseClass = '.br-badge';
+
+    let hostFixture: ComponentFixture<TestHostComponent>;
+
+    let brBadgeFixture: DebugElement;
+    let brBadgeComponent: BrBadgeComponent;
+
+    beforeEach(() => {
+        TestBed.configureTestingModule({
             imports: [BrBadgeModule],
-            providers: [
-                {
-                    provide: BR_LIB_CONFIG,
-                    useValue: { theme: Theme.ca },
-                },
-            ],
+            declarations: [TestHostComponent],
         }).compileComponents();
     });
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(BrBadgeComponent);
-        fixture.detectChanges();
+        hostFixture = TestBed.createComponent(TestHostComponent);
+        brBadgeFixture = hostFixture.debugElement.query(By.css(badgeBaseClass));
+        brBadgeComponent = brBadgeFixture.componentInstance;
+
+        hostFixture.detectChanges();
     });
 
-    it('should hava class ca', () => {
-        const el = fixture.debugElement.query(By.css('.br-badge'));
+    it('should create', () => {
+        expect(brBadgeComponent).toBeTruthy();
+    });
+
+    it('should hava color of ca theme', () => {
+        const newsStyles = getComputedStyle(brBadgeFixture.nativeElement);
+
+        expect(newsStyles.backgroundColor).toEqual('rgb(18, 142, 146)');
+    });
+
+    it('should hava ca theme when type is primary', () => {
+        const instance = hostFixture.componentInstance;
+
+        const el = hostFixture.debugElement.query(By.css(badgeBaseClass));
         expect(el).toBeTruthy();
-        expect(el.nativeElement.classList).toContain('ca');
+
+        instance.type = 'primary';
+        hostFixture.detectChanges();
+
+        const newsStyles = getComputedStyle(el.nativeElement);
+
+        expect(newsStyles.backgroundColor).toEqual('rgb(12, 84, 82)');
+    });
+
+    it('should hava ca theme when type is secondary', () => {
+        const instance = hostFixture.componentInstance;
+
+        const el = hostFixture.debugElement.query(By.css(badgeBaseClass));
+        expect(el).toBeTruthy();
+
+        instance.type = 'secondary';
+        hostFixture.detectChanges();
+
+        const newsStyles = getComputedStyle(el.nativeElement);
+
+        expect(newsStyles.backgroundColor).toEqual('rgb(133, 229, 232)');
     });
 });

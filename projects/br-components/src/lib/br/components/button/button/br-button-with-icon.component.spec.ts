@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { BrLibModule } from '../../../br-lib.module';
 import { BrButtonModule } from '../br-button.module';
 import { Component } from '@angular/core';
 import { By } from '@angular/platform-browser';
@@ -24,7 +23,6 @@ describe('BrButtonComponent with icon', () => {
         await TestBed.configureTestingModule({
             declarations: [TestButtonWithIconComponent],
             imports: [
-                BrLibModule.forRoot(),
                 BrButtonModule,
                 BrIconsModule,
                 AngularSvgIconModule.forRoot(),

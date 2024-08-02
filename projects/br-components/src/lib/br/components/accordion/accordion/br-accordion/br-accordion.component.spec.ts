@@ -4,7 +4,6 @@ import { By } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { first } from 'rxjs/operators';
-import { BrLibModule } from '../../../../br-lib.module';
 import { BrAccordionModule } from '../../br-accordion.module';
 import { BrAccordionComponent } from './br-accordion.component';
 
@@ -20,7 +19,6 @@ describe('BrAccordionComponent', () => {
         await TestBed.configureTestingModule({
             imports: [
                 AngularSvgIconModule.forRoot(),
-                BrLibModule.forRoot(),
                 BrAccordionModule,
                 BrowserAnimationsModule,
             ],
@@ -37,16 +35,19 @@ describe('BrAccordionComponent', () => {
         expect(component).toBeTruthy();
     });
 
-    it('should hava class br', () => {
-        const el = fixture.debugElement.query(By.css('.br-accordion'));
-        expect(el).toBeTruthy();
-        expect(el.nativeElement.classList).toContain('br');
-    });
-
     it('should hava class br-accordion', () => {
         const el = fixture.debugElement.query(By.css('.br-accordion'));
         expect(el).toBeTruthy();
         expect(el.nativeElement.classList).toContain('br-accordion');
+    });
+
+    it('br-accordion__head should have br theme color', () => {
+        const el = fixture.debugElement.query(By.css('.br-accordion__head'));
+        expect(el).toBeTruthy();
+
+        const newsStyles = getComputedStyle(el.nativeElement);
+
+        expect(newsStyles.color).toEqual('rgb(50, 0, 105)');
     });
 
     it('should hava isOpen false', () => {
@@ -96,78 +97,6 @@ describe('BrAccordionComponent', () => {
         );
 
         expect(hasTitle(accordionHeadElement, expectedTitle)).toBeTruthy();
-    });
-
-    it('should raise isOpenChange event when clicked (triggerEventHandler)', () => {
-        const instance = fixture.componentInstance;
-        const panelGroup = fixture.debugElement.query(
-            By.css('.br-accordion .panel-group .panel')
-        );
-
-        let isPanelOpened: boolean | undefined;
-        instance.isOpenChange.pipe(first()).subscribe(isOpen => {
-            isPanelOpened = isOpen;
-        });
-
-        // panelGroup.nativeElement.dispatchEvent(new Event())
-        panelGroup.triggerEventHandler('isOpenChange', true);
-        fixture.detectChanges();
-
-        expect(isPanelOpened).toBe(true);
-    });
-
-    it('should raise isOpenChange event when clicked (triggerEventHandler)', () => {
-        const instance = fixture.componentInstance;
-        const panelGroup = fixture.debugElement.query(
-            By.css('.br-accordion .panel-group .panel')
-        );
-
-        let isPanelOpened: boolean | undefined;
-        instance.isOpenChange.pipe(first()).subscribe(isOpen => {
-            isPanelOpened = isOpen;
-        });
-
-        // panelGroup.nativeElement.dispatchEvent(new Event())
-        panelGroup.triggerEventHandler('isOpenChange', true);
-        fixture.detectChanges();
-
-        expect(isPanelOpened).toBe(true);
-    });
-
-    it('should raise isOpenChange event when clicked (triggerEventHandler)', () => {
-        const instance = fixture.componentInstance;
-        const panelGroup = fixture.debugElement.query(
-            By.css('.br-accordion .panel-group .panel')
-        );
-
-        let isPanelOpened: boolean | undefined;
-        instance.isOpenChange.pipe(first()).subscribe(isOpen => {
-            isPanelOpened = isOpen;
-        });
-
-        // panelGroup.nativeElement.dispatchEvent(new Event())
-        panelGroup.triggerEventHandler('isOpenChange', true);
-        fixture.detectChanges();
-
-        expect(isPanelOpened).toBe(true);
-    });
-
-    it('should raise isOpenChange event when clicked (triggerEventHandler)', () => {
-        const instance = fixture.componentInstance;
-        const panelGroup = fixture.debugElement.query(
-            By.css('.br-accordion .panel-group .panel')
-        );
-
-        let isPanelOpened: boolean | undefined;
-        instance.isOpenChange.pipe(first()).subscribe(isOpen => {
-            isPanelOpened = isOpen;
-        });
-
-        // panelGroup.nativeElement.dispatchEvent(new Event())
-        panelGroup.triggerEventHandler('isOpenChange', true);
-        fixture.detectChanges();
-
-        expect(isPanelOpened).toBe(true);
     });
 
     it('should raise isOpenChange event when clicked (triggerEventHandler)', () => {

@@ -1,6 +1,4 @@
-import { Component, Inject, Input } from '@angular/core';
-import { BR_LIB_CONFIG } from '../../../br-lib.config.token';
-import { Theme } from '../../../theme';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 import { BadgeBorder } from '../models/badge-border';
 import { BadgeSize } from '../models/badge-size';
 import { BadgeType } from '../models/badge-type';
@@ -9,6 +7,7 @@ import { BadgeType } from '../models/badge-type';
     selector: 'br-badge',
     templateUrl: './br-badge.component.html',
     styleUrls: ['./br-badge.component.scss'],
+    encapsulation: ViewEncapsulation.None,
 })
 export class BrBadgeComponent {
     @Input()
@@ -22,12 +21,4 @@ export class BrBadgeComponent {
 
     @Input()
     type: BadgeType = 'default';
-
-    theme: Theme;
-
-    constructor(
-        @Inject(BR_LIB_CONFIG) private brLibConfig = { theme: Theme.br }
-    ) {
-        this.theme = brLibConfig.theme;
-    }
 }

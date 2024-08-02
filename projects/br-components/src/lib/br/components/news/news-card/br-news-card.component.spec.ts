@@ -1,7 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BrNewsCardComponent } from './br-news-card.component';
-import { BrLibModule } from '../../../br-lib.module';
 import { BrNewsModule } from '../br-news.module';
 import { By } from '@angular/platform-browser';
 
@@ -13,7 +12,7 @@ describe('BrNewsComponent', () => {
 
     beforeEach(() => {
         TestBed.configureTestingModule({
-            imports: [BrLibModule.forRoot(), BrNewsModule],
+            imports: [BrNewsModule],
         });
         fixture = TestBed.createComponent(BrNewsCardComponent);
         component = fixture.componentInstance;
@@ -25,7 +24,13 @@ describe('BrNewsComponent', () => {
     });
 
     it('should have theme as br', () => {
-        expect(component.theme).toEqual('br');
+        const newsNativeElement = fixture.debugElement.query(
+            By.css(newsBaseClass)
+        ).nativeElement;
+        const newsStyles = getComputedStyle(newsNativeElement);
+
+        expect(newsStyles.backgroundColor).toEqual('rgb(226, 242, 252)');
+        expect(newsStyles.borderLeftColor).toEqual('rgb(0, 149, 235)');
     });
 
     it('should have default newsType as Info', () => {
