@@ -12,7 +12,7 @@
     [class.br-button_with-image]="icon"
     [class.fd-button_disabled]="disabled"
     [disabled]="disabled"
-    (press)="onPressHandler()">
+    (click)="onPressHandler($event)">
     <div
         class="br-button__text"
         [class.br-button__text_with-column-gap]="!!this.contentCount">

@@ -1,14 +1,9 @@
-import { applicationConfig, moduleMetadata } from '@storybook/angular';
-import { importProvidersFrom } from '@angular/core';
-import { BrLibModule } from '../../../br-lib.module';
+import { moduleMetadata } from '@storybook/angular';
 import { BrScrollerModule } from '../br-scroller.module';
 
 export default {
     argTypes: {},
     decorators: [
-        applicationConfig({
-            providers: [importProvidersFrom([BrLibModule.forRoot()])],
-        }),
         moduleMetadata({
             imports: [BrScrollerModule],
         }),

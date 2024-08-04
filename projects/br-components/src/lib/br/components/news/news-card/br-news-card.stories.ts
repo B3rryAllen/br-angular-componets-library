@@ -1,6 +1,4 @@
-import { applicationConfig, moduleMetadata } from '@storybook/angular';
-import { importProvidersFrom } from '@angular/core';
-import { BrLibModule } from '../../../br-lib.module';
+import { moduleMetadata } from '@storybook/angular';
 import { BrNewsModule } from '../br-news.module';
 import { BrNewsCardComponent } from './br-news-card.component';
 import { NewsType, newsTypeOptions } from '../models/news-type';
@@ -24,9 +22,6 @@ export default {
     },
     component: BrNewsCardComponent,
     decorators: [
-        applicationConfig({
-            providers: [importProvidersFrom([BrLibModule.forRoot()])],
-        }),
         moduleMetadata({
             imports: [BrNewsModule],
         }),

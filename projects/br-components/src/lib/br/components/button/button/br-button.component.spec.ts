@@ -184,12 +184,12 @@ describe('BrButtonComponent', () => {
         const buttonElement = fixture.debugElement.query(
             By.css(buttonBaseClass)
         );
-        buttonElement.triggerEventHandler('press', null);
+        buttonElement.triggerEventHandler('click', null);
 
         expect(component.press.emit).toHaveBeenCalled();
     });
 
-    it('should not emit press event when disabled button is clicked', () => {
+    it('should not emit press event when button is clicked but button is disabled', () => {
         spyOn(component.press, 'emit');
         component.disabled = true;
         fixture.detectChanges();
@@ -197,6 +197,9 @@ describe('BrButtonComponent', () => {
         const buttonElement = fixture.debugElement.query(
             By.css(buttonBaseClass)
         );
+        component.disabled = true;
+        fixture.detectChanges();
+
         buttonElement.triggerEventHandler('press', null);
         expect(component.press.emit).not.toHaveBeenCalled();
     });

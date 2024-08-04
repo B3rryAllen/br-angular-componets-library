@@ -37,7 +37,7 @@ export class BrButtonComponent implements OnInit {
     public icon: BrIconComponent | undefined;
 
     @Output()
-    public press = new EventEmitter<void>();
+    public press = new EventEmitter<Event>();
 
     @Input()
     width: ButtonWidth = ButtonWidth.Auto;
@@ -58,9 +58,9 @@ export class BrButtonComponent implements OnInit {
         }
     }
 
-    onPressHandler() {
+    onPressHandler($event: Event): void {
         if (!this.disabled) {
-            this.press.emit();
+            this.press.emit($event);
         }
     }
 }

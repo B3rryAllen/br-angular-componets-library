@@ -1,6 +1,5 @@
-import { applicationConfig, moduleMetadata } from '@storybook/angular';
+import { applicationConfig, Meta, moduleMetadata } from '@storybook/angular';
 import { importProvidersFrom } from '@angular/core';
-import { BrLibModule } from '../../../br-lib.module';
 import { BrButtonComponent } from './br-button.component';
 import { BrButtonModule } from '../br-button.module';
 import { BrIconsModule } from '../../icons/br-icons.module';
@@ -8,6 +7,7 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
 import { ButtonType } from '../models/button-type';
 import { ButtonSize } from '../models/button-size';
 import { ButtonWidth } from '../models/button-width';
+import { action } from '@storybook/addon-actions';
 
 export default {
     argTypes: {
@@ -49,7 +49,6 @@ export default {
         applicationConfig({
             providers: [
                 importProvidersFrom([
-                    BrLibModule.forRoot({ theme: 'ca' }),
                     AngularSvgIconModule.forRoot(),
                     BrIconsModule,
                 ]),
@@ -68,19 +67,21 @@ type InputArgs = {
     type?: ButtonType;
     height?: ButtonSize;
     width?: ButtonWidth;
+    press?: () => void;
 };
 
-type ButtonStory = ((args: InputArgs) => unknown) & { args?: InputArgs };
+type ButtonStory = Meta<InputArgs>;
 
 export const CaBasic: ButtonStory = (args: InputArgs) => ({
     props: {
         ...args,
     },
-    template: `<div class="ca"><br-button [label]="label"></br-button></div>`,
+    template: `<div class="ca"><br-button [label]="label" (press)="press"></br-button></div>`,
 });
 
 CaBasic.args = {
     label: "I'm a button",
+    press: action('Button pressed'),
 };
 
 export const CaTypeSecondary: ButtonStory = (args: InputArgs) => ({

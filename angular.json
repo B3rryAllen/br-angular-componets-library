@@ -54,7 +54,7 @@
                         "configDir": ".storybook",
                         "browserTarget": "br-components:build",
                         "compodoc": true,
-                        "compodocArgs": ["-e", "json", "-d", "."],
+                        "compodocArgs": ["-e", "json", "-d", "./dist/storybook"],
                         "port": 6006,
                         "stylePreprocessorOptions": {
                             "includePaths": [
@@ -69,7 +69,7 @@
                         "configDir": ".storybook",
                         "browserTarget": "br-components:build",
                         "compodoc": true,
-                        "compodocArgs": ["-e", "json", "-d", "."],
+                        "compodocArgs": ["-e", "json", "-d", "./dist/storybook"],
                         "outputDir": "dist/storybook/storybook-static",
                         "stylePreprocessorOptions": {
                             "includePaths": [

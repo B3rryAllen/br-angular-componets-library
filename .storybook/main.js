@@ -4,12 +4,14 @@ module.exports = {
     stories: ['../projects/**/*.stories.@(js|jsx|ts|tsx)'],
 
     addons: [
+        '@storybook/addon-actions',
         '@storybook/addon-links',
         '@storybook/addon-essentials',
         '@storybook/addon-viewport',
         '@storybook/addon-a11y',
         '@storybook/icons',
         'storybook-mobile',
+        '@chromatic-com/storybook'
     ],
 
     framework: {
@@ -20,9 +22,7 @@ module.exports = {
         },
     },
 
-    docs: {
-        autodocs: true,
-    },
+    docs: {},
 
     async webpackFinal(config) {
         config.module.rules.push(

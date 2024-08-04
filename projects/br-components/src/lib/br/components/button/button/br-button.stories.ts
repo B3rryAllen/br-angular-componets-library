@@ -7,28 +7,50 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
 import { ButtonType } from '../models/button-type';
 import { ButtonSize } from '../models/button-size';
 import { ButtonWidth } from '../models/button-width';
+import { fn } from '@storybook/test';
 
 export default {
     argTypes: {
         count: {
             type: 'number',
+            description: 'Number written after or before button label',
         },
         label: {
             type: 'string',
             description: 'Button label',
         },
         type: {
-            type: 'radio',
+            type: 'select',
+            description: 'Type of button',
             options: ['Primary', 'Secondary', 'Transparent', 'Link'],
+            table: {
+                defaultValue: { summary: 'Primary' },
+            },
         },
         height: {
             type: 'radio',
+            description: 'Button height',
             options: ['micro', 'small', 'medium', 'large'],
+            table: {
+                defaultValue: { summary: 'medium' },
+            },
         },
         width: {
             type: 'radio',
             options: ['auto', 'full'],
+            table: {
+                defaultValue: { summary: 'auto' },
+            },
         },
+        press: {
+            action: 'press',
+            description: 'Button press event',
+        },
+    },
+    args: {
+        type: 'Primary',
+        height: 'medium',
+        width: 'auto',
     },
     component: BrButtonComponent,
     decorators: [
@@ -53,6 +75,7 @@ type InputArgs = {
     type?: ButtonType;
     height?: ButtonSize;
     width?: ButtonWidth;
+    press?: () => void;
 };
 
 type ButtonStory = ((args: InputArgs) => unknown) & { args?: InputArgs };
@@ -61,11 +84,12 @@ export const Basic: ButtonStory = (args: InputArgs) => ({
     props: {
         ...args,
     },
-    template: `<br-button [label]="label"></br-button>`,
+    template: `<br-button [label]="label" (press)="press($event)"></br-button>`,
 });
 
 Basic.args = {
     label: "I'm a button",
+    press: fn(),
 };
 
 export const TypeSecondary: ButtonStory = (args: InputArgs) => ({
