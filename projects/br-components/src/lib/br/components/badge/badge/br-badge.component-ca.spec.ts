@@ -14,7 +14,7 @@ import { BadgeType } from '../models/badge-type';
 })
 class TestHostComponent {
     @Input()
-    type: BadgeType = 'default';
+    type: BadgeType = 'Default';
 }
 
 describe('BrBadgeComponent CA Theme', () => {
@@ -56,7 +56,7 @@ describe('BrBadgeComponent CA Theme', () => {
         const el = hostFixture.debugElement.query(By.css(badgeBaseClass));
         expect(el).toBeTruthy();
 
-        instance.type = 'primary';
+        instance.type = 'Primary';
         hostFixture.detectChanges();
 
         const newsStyles = getComputedStyle(el.nativeElement);
@@ -70,7 +70,7 @@ describe('BrBadgeComponent CA Theme', () => {
         const el = hostFixture.debugElement.query(By.css(badgeBaseClass));
         expect(el).toBeTruthy();
 
-        instance.type = 'secondary';
+        instance.type = 'Secondary';
         hostFixture.detectChanges();
 
         const newsStyles = getComputedStyle(el.nativeElement);

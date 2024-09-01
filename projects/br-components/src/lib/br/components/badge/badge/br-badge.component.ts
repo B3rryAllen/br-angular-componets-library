@@ -11,14 +11,14 @@ import { BadgeType } from '../models/badge-type';
 })
 export class BrBadgeComponent {
     @Input()
-    border: BadgeBorder = 'none';
+    border: BadgeBorder = BadgeBorder.None;
 
     @Input()
     count?: number;
 
     @Input()
-    size: BadgeSize = 'medium';
+    size: BadgeSize = BadgeSize.Medium;
 
     @Input()
-    type: BadgeType = 'default';
+    type: BadgeType = BadgeType.Default;
 }

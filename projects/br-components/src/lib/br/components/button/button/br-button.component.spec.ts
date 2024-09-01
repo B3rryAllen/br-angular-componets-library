@@ -6,6 +6,10 @@ import { BrButtonModule } from '../br-button.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import {} from 'jasmine';
+
 describe('BrButtonComponent', () => {
     const buttonBaseClass = '.br-button';
 
@@ -110,12 +114,12 @@ describe('BrButtonComponent', () => {
         const buttonElement = fixture.debugElement.query(
             By.css(buttonBaseClass)
         );
-        expect(component.height).toBe('medium');
+        expect(component.height).toBe('Medium');
         expect(buttonElement.classes['br-button_size-medium']).toBeTruthy();
     });
 
     it('should have br-button_size-micro class when height is micro', () => {
-        component.height = 'micro';
+        component.height = 'Micro';
         fixture.detectChanges();
 
         const buttonElement = fixture.debugElement.query(
@@ -125,7 +129,7 @@ describe('BrButtonComponent', () => {
     });
 
     it('should have br-button_size-small class when height is small', () => {
-        component.height = 'small';
+        component.height = 'Small';
         fixture.detectChanges();
 
         const buttonElement = fixture.debugElement.query(
@@ -135,7 +139,7 @@ describe('BrButtonComponent', () => {
     });
 
     it('should have br-button_size-large class when height is large', () => {
-        component.height = 'large';
+        component.height = 'Large';
         fixture.detectChanges();
 
         const buttonElement = fixture.debugElement.query(
@@ -145,11 +149,11 @@ describe('BrButtonComponent', () => {
     });
 
     it('should have with auto as default value', () => {
-        expect(component.width).toBe('auto');
+        expect(component.width).toBe('Auto');
     });
 
     it('should have br-button_width-full class when width is full', () => {
-        component.width = 'full';
+        component.width = 'Full';
         fixture.detectChanges();
 
         const buttonElement = fixture.debugElement.query(

@@ -4,11 +4,11 @@
     [class.br-button_secondary]="buttonType === 'Secondary'"
     [class.br-button_transparent]="buttonType === 'Transparent'"
     [class.br-button_link]="buttonType === 'Link'"
-    [class.br-button_size-large]="height === 'large'"
-    [class.br-button_size-medium]="height === 'medium'"
-    [class.br-button_size-small]="height === 'small'"
-    [class.br-button_size-micro]="height === 'micro'"
-    [class.br-button_width-full]="width === 'full'"
+    [class.br-button_size-large]="height === 'Large'"
+    [class.br-button_size-medium]="height === 'Medium'"
+    [class.br-button_size-small]="height === 'Small'"
+    [class.br-button_size-micro]="height === 'Micro'"
+    [class.br-button_width-full]="width === 'Full'"
     [class.br-button_with-image]="icon"
     [class.fd-button_disabled]="disabled"
     [disabled]="disabled"
@@ -26,8 +26,8 @@
         <br-badge
             *ngIf="count !== undefined"
             [count]="count"
-            [type]="buttonType === 'Primary' ? 'primary' : 'secondary'"
-            size="small">
+            [type]="buttonType === 'Primary' ? 'Primary' : 'Secondary'"
+            size="Small">
         </br-badge>
     </div>
 </button>

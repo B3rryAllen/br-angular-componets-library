@@ -9,19 +9,19 @@ export default {
     argTypes: {
         border: {
             control: {
-                options: ['none', 'border'],
+                options: ['None', 'Border'],
                 type: 'inline-radio',
             },
         },
         size: {
             control: {
-                options: ['small', 'medium'],
+                options: ['Small', 'Medium'],
                 type: 'inline-radio',
             },
         },
         type: {
             control: {
-                options: ['primary', 'secondary', 'error', 'default'],
+                options: ['Primary', 'Secondary', 'Error', 'Default'],
                 type: 'inline-radio',
             },
         },
@@ -64,8 +64,8 @@ export const Basic: BadgeGroupStory = (args: InputArgs) => ({
 
 Basic.args = {
     count: 1,
-    size: 'medium',
-    type: 'default',
+    size: 'Medium',
+    type: 'Default',
 };
 
 export const BasicCaTheme: BadgeGroupStory = (args: InputArgs) => ({
@@ -77,8 +77,8 @@ export const BasicCaTheme: BadgeGroupStory = (args: InputArgs) => ({
 
 BasicCaTheme.args = {
     count: 1,
-    size: 'medium',
-    type: 'default',
+    size: 'Medium',
+    type: 'Default',
 };
 
 export const Primary: BadgeGroupStory = (args: InputArgs) => ({
@@ -90,8 +90,8 @@ export const Primary: BadgeGroupStory = (args: InputArgs) => ({
 
 Primary.args = {
     count: 1,
-    size: 'medium',
-    type: 'primary',
+    size: 'Medium',
+    type: 'Primary',
 };
 
 export const PrimaryCaTheme: BadgeGroupStory = (args: InputArgs) => ({
@@ -103,8 +103,8 @@ export const PrimaryCaTheme: BadgeGroupStory = (args: InputArgs) => ({
 
 PrimaryCaTheme.args = {
     count: 1,
-    size: 'medium',
-    type: 'primary',
+    size: 'Medium',
+    type: 'Primary',
 };
 
 export const Secondary: BadgeGroupStory = (args: InputArgs) => ({
@@ -116,8 +116,8 @@ export const Secondary: BadgeGroupStory = (args: InputArgs) => ({
 
 Secondary.args = {
     count: 1,
-    size: 'medium',
-    type: 'secondary',
+    size: 'Medium',
+    type: 'Secondary',
 };
 
 export const SecondaryCaTheme: BadgeGroupStory = (args: InputArgs) => ({
@@ -129,8 +129,8 @@ export const SecondaryCaTheme: BadgeGroupStory = (args: InputArgs) => ({
 
 SecondaryCaTheme.args = {
     count: 1,
-    size: 'medium',
-    type: 'secondary',
+    size: 'Medium',
+    type: 'Secondary',
 };
 
 export const Error: BadgeGroupStory = (args: InputArgs) => ({
@@ -142,8 +142,8 @@ export const Error: BadgeGroupStory = (args: InputArgs) => ({
 
 Error.args = {
     count: 1,
-    size: 'medium',
-    type: 'error',
+    size: 'Medium',
+    type: 'Error',
 };
 
 export const ErrorMediumWithBorder: BadgeGroupStory = (args: InputArgs) => ({
@@ -154,10 +154,10 @@ export const ErrorMediumWithBorder: BadgeGroupStory = (args: InputArgs) => ({
 });
 
 ErrorMediumWithBorder.args = {
-    border: 'border',
+    border: 'Border',
     count: 1,
-    size: 'medium',
-    type: 'error',
+    size: 'Medium',
+    type: 'Error',
 };
 
 export const ErrorSmallWithBorder: BadgeGroupStory = (args: InputArgs) => ({
@@ -168,10 +168,10 @@ export const ErrorSmallWithBorder: BadgeGroupStory = (args: InputArgs) => ({
 });
 
 ErrorSmallWithBorder.args = {
-    border: 'border',
+    border: 'Border',
     count: 1,
-    size: 'small',
-    type: 'error',
+    size: 'Small',
+    type: 'Error',
 };
 
 export const Medium: BadgeGroupStory = (args: InputArgs) => ({
@@ -183,8 +183,8 @@ export const Medium: BadgeGroupStory = (args: InputArgs) => ({
 
 Medium.args = {
     count: 13,
-    size: 'medium',
-    type: 'default',
+    size: 'Medium',
+    type: 'Default',
 };
 
 export const Small: BadgeGroupStory = (args: InputArgs) => ({
@@ -196,6 +196,6 @@ export const Small: BadgeGroupStory = (args: InputArgs) => ({
 
 Small.args = {
     count: 13,
-    size: 'small',
-    type: 'default',
+    size: 'Small',
+    type: 'Default',
 };

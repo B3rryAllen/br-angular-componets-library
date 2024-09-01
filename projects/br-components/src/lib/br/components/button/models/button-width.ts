@@ -1,8 +1,8 @@
-export const ButtonWidths = ['auto', 'full'] as const;
+export const ButtonWidths = ['Auto', 'Full'] as const;
 
 export type ButtonWidth = (typeof ButtonWidths)[number];
 
 export const ButtonWidth = {
-    Auto: 'auto' as ButtonWidth,
-    Full: 'full' as ButtonWidth,
+    Auto: 'Auto' as ButtonWidth,
+    Full: 'Full' as ButtonWidth,
 };

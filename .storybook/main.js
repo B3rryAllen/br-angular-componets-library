@@ -10,7 +10,7 @@ module.exports = {
         '@storybook/addon-viewport',
         '@storybook/addon-a11y',
         '@storybook/icons',
-        'storybook-mobile',
+        'storybook-mobile-addon',
         '@chromatic-com/storybook'
     ],
 

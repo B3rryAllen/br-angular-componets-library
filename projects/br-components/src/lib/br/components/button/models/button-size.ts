@@ -1,8 +1,8 @@
-export type ButtonSize = 'micro' | 'small' | 'medium' | 'large';
+export type ButtonSize = 'Micro' | 'Small' | 'Medium' | 'Large';
 
 export const ButtonSize = {
-    Micro: 'micro' as ButtonSize,
-    Small: 'small' as ButtonSize,
-    Medium: 'medium' as ButtonSize,
-    Large: 'large' as ButtonSize,
+    Micro: 'Micro' as ButtonSize,
+    Small: 'Small' as ButtonSize,
+    Medium: 'Medium' as ButtonSize,
+    Large: 'Large' as ButtonSize,
 };

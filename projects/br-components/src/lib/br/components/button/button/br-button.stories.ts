@@ -30,16 +30,16 @@ export default {
         height: {
             type: 'radio',
             description: 'Button height',
-            options: ['micro', 'small', 'medium', 'large'],
+            options: ['Micro', 'Small', 'Medium', 'Large'],
             table: {
-                defaultValue: { summary: 'medium' },
+                defaultValue: { summary: 'Medium' },
             },
         },
         width: {
             type: 'radio',
-            options: ['auto', 'full'],
+            options: ['Auto', 'Full'],
             table: {
-                defaultValue: { summary: 'auto' },
+                defaultValue: { summary: 'Auto' },
             },
         },
         press: {
@@ -96,112 +96,121 @@ export const TypeSecondary: ButtonStory = (args: InputArgs) => ({
     props: {
         ...args,
     },
-    template: `<br-button [label]="label" [buttonType]="type"></br-button>`,
+    template: `<br-button [label]="label" [buttonType]="type" (press)="press($event)"></br-button>`,
 });
 
 TypeSecondary.args = {
     label: "I'm a secondary button",
     type: ButtonType.Secondary,
+    press: fn(),
 };
 
 export const TypeTransparent: ButtonStory = (args: InputArgs) => ({
     props: {
         ...args,
     },
-    template: `<br-button [label]="label" [buttonType]="type"></br-button>`,
+    template: `<br-button [label]="label" [buttonType]="type" (press)="press($event)"></br-button>`,
 });
 
 TypeTransparent.args = {
     label: "I'm a transparent button",
     type: ButtonType.Transparent,
+    press: fn(),
 };
 
 export const TypeLink: ButtonStory = (args: InputArgs) => ({
     props: {
         ...args,
     },
-    template: `<br-button [label]="label" [buttonType]="type"></br-button>`,
+    template: `<br-button [label]="label" [buttonType]="type" (press)="press($event)"></br-button>`,
 });
 
 TypeLink.args = {
     label: "I'm a link button",
     type: ButtonType.Link,
+    press: fn(),
 };
 
 export const HeightLarge: ButtonStory = (args: InputArgs) => ({
     props: {
         ...args,
     },
-    template: `<br-button [label]="label" [height]="height"></br-button>`,
+    template: `<br-button [label]="label" [height]="height" (press)="press($event)"></br-button>`,
 });
 
 HeightLarge.args = {
     label: "I'm a large button",
     height: ButtonSize.Large,
+    press: fn(),
 };
 
 export const HeightMedium: ButtonStory = (args: InputArgs) => ({
     props: {
         ...args,
     },
-    template: `<br-button [label]="label" [height]="height"></br-button>`,
+    template: `<br-button [label]="label" [height]="height" (press)="press($event)"></br-button>`,
 });
 
 HeightMedium.args = {
     label: "I'm a medium button",
     height: ButtonSize.Medium,
+    press: fn(),
 };
 
 export const HeightSmall: ButtonStory = (args: InputArgs) => ({
     props: {
         ...args,
     },
-    template: `<br-button [label]="label" [height]="height"></br-button>`,
+    template: `<br-button [label]="label" [height]="height" (press)="press($event)"></br-button>`,
 });
 
 HeightSmall.args = {
     label: "I'm a small button",
     height: ButtonSize.Small,
+    press: fn(),
 };
 
 export const HeightMicro: ButtonStory = (args: InputArgs) => ({
     props: {
         ...args,
     },
-    template: `<br-button [label]="label" [height]="height"></br-button>`,
+    template: `<br-button [label]="label" [height]="height" (press)="press($event)"></br-button>`,
 });
 
 HeightMicro.args = {
     label: "I'm a micro button",
     height: ButtonSize.Micro,
+    press: fn(),
 };
 
 export const WidthFull: ButtonStory = (args: InputArgs) => ({
     props: {
         ...args,
     },
-    template: `<br-button [label]="label" [width]="width"></br-button>`,
+    template: `<br-button [label]="label" [width]="width" (press)="press($event)"></br-button>`,
 });
 
 WidthFull.args = {
     label: "I'm a full button",
     width: ButtonWidth.Full,
+    press: fn(),
 };
 
 export const WidthAuto: ButtonStory = (args: InputArgs) => ({
     props: {
         ...args,
     },
-    template: `<br-button [label]="label" [width]="width"></br-button>`,
+    template: `<br-button [label]="label" [width]="width" (press)="press($event)"></br-button>`,
 });
 
 WidthAuto.args = {
     label: "I'm a full button",
     width: ButtonWidth.Auto,
+    press: fn(),
 };
 
 export const PrimaryWithCount: ButtonStory = (args: InputArgs) => ({
-    component: BrButtonComponent,
+    template: `<br-button [label]="label" [count]="count" (press)="press($event)"></br-button>`,
     props: {
         ...args,
     },
@@ -210,10 +219,11 @@ export const PrimaryWithCount: ButtonStory = (args: InputArgs) => ({
 PrimaryWithCount.args = {
     count: 1,
     label: "I'm a button with count",
+    press: fn(),
 };
 
 export const PrimaryWithIcon: ButtonStory = (args: InputArgs) => ({
-    template: `<br-button [label]="label">
+    template: `<br-button [label]="label" (press)="press($event)">
           <br-icon name="chevronDown"></br-icon>
         </br-button>`,
     props: {
@@ -224,4 +234,5 @@ export const PrimaryWithIcon: ButtonStory = (args: InputArgs) => ({
 PrimaryWithIcon.args = {
     count: 1,
     label: "I'm a button with icon",
+    press: fn(),
 };

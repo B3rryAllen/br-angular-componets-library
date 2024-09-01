@@ -1,6 +1,6 @@
-export type BadgeSize = 'small' | 'medium';
+export type BadgeSize = 'Small' | 'Medium';
 
 export const BadgeSize = {
-    Small: 'small' as BadgeSize,
-    Medium: 'medium' as BadgeSize,
+    Small: 'Small' as BadgeSize,
+    Medium: 'Medium' as BadgeSize,
 };

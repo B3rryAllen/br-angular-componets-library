@@ -52,7 +52,7 @@ describe('BrBadgeComponent', () => {
         const el = fixture.debugElement.query(By.css(badgeBaseClass));
         expect(el).toBeTruthy();
 
-        instance.type = 'primary';
+        instance.type = 'Primary';
         fixture.detectChanges();
 
         expect(el.nativeElement.classList).toContain('br-badge_primary');
@@ -64,7 +64,7 @@ describe('BrBadgeComponent', () => {
         const el = fixture.debugElement.query(By.css(badgeBaseClass));
         expect(el).toBeTruthy();
 
-        instance.type = 'primary';
+        instance.type = 'Primary';
         fixture.detectChanges();
 
         const newsStyles = getComputedStyle(el.nativeElement);
@@ -78,7 +78,7 @@ describe('BrBadgeComponent', () => {
         const el = fixture.debugElement.query(By.css(badgeBaseClass));
         expect(el).toBeTruthy();
 
-        instance.type = 'secondary';
+        instance.type = 'Secondary';
         fixture.detectChanges();
 
         expect(el.nativeElement.classList).toContain('br-badge_secondary');
@@ -90,7 +90,7 @@ describe('BrBadgeComponent', () => {
         const el = fixture.debugElement.query(By.css(badgeBaseClass));
         expect(el).toBeTruthy();
 
-        instance.type = 'secondary';
+        instance.type = 'Secondary';
         fixture.detectChanges();
 
         const newsStyles = getComputedStyle(el.nativeElement);
